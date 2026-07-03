@@ -2,3 +2,6 @@ build
 *.o
 *.a
 *.log
+*.db
+*_output
+*.csv
