@@ -19,7 +19,7 @@ void simple(adf::input_buffer<int16> &__restrict in,
 }
 ```
 
-A simple graph: execute the kernel twice.
+A simple graph: execute the kernel twice using PL I/O
 ```c
 adf::connect(in.out[0], first.in[0]);
 adf::connect(first.out[0], second.in[0]);
@@ -37,5 +37,19 @@ source vitis-installation/settings64.sh
 Build with a single command:
 
 ```sh
-v++ -c --mode aie --config config.ini main.cc
+v++ -c --mode aie --config config.ini --target <hw|x86sim> --aie.workdir ./build/work/<hw|x86sim> main.cc
+```
+
+### Run simulator
+
+Run the graph with a simulator. By default the build is for the `x86simulator`:
+
+```sh
+x86simulator --pkg-dir=./build/work/x86sim --i=. --dump
+```
+
+Or use the cycle accurate simualtor for AIE building with `--target hw`:
+
+```sh
+aiesimulator --pkg-dir=./build/work/hw
 ```

@@ -1,0 +1,14 @@
+{
+    "plio_throughput": {
+        "port0": {
+            "port name": "graph_in",
+            "Type": "IN",
+            "Throughput": "459.976105 MBps"
+        },
+        "port1": {
+            "port name": "graph_out",
+            "Type": "OUT",
+            "Throughput": "300.751880 MBps"
+        }
+    }
+}
