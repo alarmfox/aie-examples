@@ -115,19 +115,6 @@ v++ --target hw_emu \
   -o build/work/hw_emu/dma_hls.xo
 ```
 
-### Build PS application
-
-The PS application is a just cross compiled application for `aarch64`:
-
-```sh
-CXXFLAGS="-std=c++17 -I${XILINX_HLS}/include/ -I${SDKTARGETSYSROOT}/usr/include/xrt/ -g -Wall -c -fmessage-length=0 --sysroot=${SDKTARGETSYSROOT} -O1"
-
-LDFLAGS="-lgcc -lc -luuid -lxrt_coreutil -lrt -ldl -lcrypt -lstdc++ -L${SDKTARGETSYSROOT}/usr/lib/ --sysroot=${SDKTARGETSYSROOT} -L${XILINX_VITIS}/aietools/lib/aarch64.o"
-
-$CXX $CXXFLAGS -o ./build/work/_x/main.o ps/main.cc
-$CXX $LDFLAGS -o ./build/work/hw_emu/host.exe ./build/work/_x/main.o
-```
-
 ### Link PL in a xsa
 
 Create an `.xsa` to be converted in a `xclbin`
@@ -142,21 +129,35 @@ Create an `.xsa` to be converted in a `xclbin`
   build/work/aie/hw/libadf.a build/work/hw_emu/dma_hls.xo
 ```
 
+### Build PS application
+
+The PS application is a just cross compiled application for `aarch64`:
+
+```sh
+CXXFLAGS="-std=c++17 -I${XILINX_HLS}/include/ -I${SDKTARGETSYSROOT}/usr/include/xrt/ -g -Wall -c -fmessage-length=0 --sysroot=${SDKTARGETSYSROOT} -O1"
+
+LDFLAGS="-lgcc -lc -luuid -lxrt_coreutil -lrt -ldl -lcrypt -lstdc++ -L${SDKTARGETSYSROOT}/usr/lib/ --sysroot=${SDKTARGETSYSROOT} -L${XILINX_VITIS}/aietools/lib/aarch64.o"
+
+$CXX $CXXFLAGS -o ./build/work/_x/main.o ps/main.cc
+$CXX $LDFLAGS -o ./build/work/hw_emu/host.exe ./build/work/_x/main.o
+```
+
 Create the package to boot on the simulator. File order matters! (first `host.exe`)
 
 ```sh
 v++ -p --target hw_emu \
   --platform /opt/xilinx/2025.2/Vitis/base_platforms/xilinx_vek280_base_202520_1/xilinx_vek280_base_202520_1.xpfm \
   --temp_dir ./build/work/_x/package \
+  --log_dir ./build/work/hw_emu/logs \
   ./build/work/hw_emu/design.xsa  ./build/work/aie/hw/libadf.a \
-  --package.rootfs /opt/xilinx/xilinx-versal-common-v2025.2/rootfs.tar.gz \
+  --package.rootfs /opt/xilinx/xilinx-versal-common-v2025.2/rootfs.ext4 \
   --package.kernel_image /opt/xilinx/xilinx-versal-common-v2025.2/Image \
   --package.image_format=ext4 \
   --package.boot_mode sd \
   --package.sd_file run.sh \
+  --package.defer_aie_run \
   --package.sd_file ./build/work/hw_emu/host.exe ./build/work/hw_emu/design.xsa ./build/work/aie/hw/libadf.a \
-  --package.out_dir ./build/work/hw_emu/package \
-  --package.sd_dir ./build/work/hw_emu/sd_card
+  --package.out_dir ./build/work/hw_emu/package
 ```
 
 The important files of the compilation are:
@@ -167,4 +168,3 @@ The important files of the compilation are:
 ### Emulator +  Simulator
 
 To launch the emulation use `build/work/hw_emu/package/launch_hw_emu.sh`.
-
