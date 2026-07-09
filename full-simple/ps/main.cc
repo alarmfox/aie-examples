@@ -1,35 +1,11 @@
-#include <fstream>
 #include <stdio.h>
 #include <cstring>
-#include <vector>
 
 #include "xrt/xrt_graph.h"
-
-
-// load_xclbin function is used to read in xclbin file
-static std::vector<char> load_xclbin(xrtDeviceHandle device, const std::string &fnm) {
-   if (fnm.empty()) {
-      throw std::runtime_error("No xclbin specified");
-   }
-
-   // load bit stream
-   std::ifstream stream(fnm);
-   stream.seekg(0,stream.end);
-   size_t size = stream.tellg();
-   stream.seekg(0,stream.beg);
-
-   std::vector<char> header(size);
-   stream.read(header.data(),size);
-   auto top = reinterpret_cast<const axlf*>(header.data());
-   if (xrtDeviceLoadXclbin(device, top)) {
-      throw std::runtime_error("Bitstream download failed");
-   }
-
-   return header;
-}
+#include "xrt/xrt_kernel.h"
 
 /*
- * 1. Open the device, and load XCLBIN. Get the UUID as needed.
+ * 1. Open the device and load XCLBIN. Get the UUID as needed.
  * 2. Allocate buffer objects and map-to-host memory. Process and transfer data from the host memory to the device memory.
  * 3. Get PL kernel handles, set arguments for kernels, and launch kernels.
  * 4. Get AI Engine graphs, and run graphs.
@@ -39,7 +15,21 @@ static std::vector<char> load_xclbin(xrtDeviceHandle device, const std::string &
  * 8. The host code continues processing using the new data in the host memory.
  */
 
-const size_t output_size_in_bytes = 128 * sizeof(int16_t);
+const size_t INPUT_LEN = 128;
+const size_t OUTPUT_SIZE = INPUT_LEN * sizeof(int16_t);
+
+static void generate_test_data(std::vector<int16_t> &in, std::vector<int16_t> &golden) {
+   in.reserve(INPUT_LEN);
+   golden.reserve(INPUT_LEN);
+
+   for(size_t i = 0; i < INPUT_LEN; ++i) {
+      in[i] = i + 1;
+   }
+
+   for(size_t i = 0; i < INPUT_LEN; ++i) {
+      golden[i] = in[i] + 2;
+   }
+}
 
 int main(int argc, const char **argv) {
 
@@ -48,21 +38,30 @@ int main(int argc, const char **argv) {
     return 1;
   }
 
-  /* Open the device and load XLCIBIN  */
+  /* Create test data: input and golden */
+  std::vector<int16_t> input, golden, output;
+
+  generate_test_data(input, golden);
+
+  /* Open the device and load xclbin */
   xrt::device device = xrt::device(0);
 
-  printf("Loading XLCIBIN: %s\n", argv[1]);
-  auto xclbin = load_xclbin(device, argv[1]);
-  auto top = reinterpret_cast<const axlf*>(xclbin.data());
+  printf("Loading xclbin: %s\n", argv[1]);
+  auto xclbin_uuid = device.load_xclbin(argv[1]);
 
+  /* AIE Graph control */
+  auto ghdl = xrt::graph(device, xclbin_uuid, "graph");
 
+  ghdl.run(1);
 
-  // /* AIE Graph control */
-  // auto ghdl = xrt::graph(device, top->m_header.uuid, "graph");
-  //
-  // ghdl.run(4);
-  //
-  // ghdl.wait();
+  ghdl.wait();
+
+#if 0
+  /* Print result */
+  for(size_t i = 0; i < INPUT_LEN; ++i) {
+     printf("%d\n", output[i]);
+  }
+#endif
 
   return 0;
 }
