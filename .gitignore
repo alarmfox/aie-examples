@@ -5,3 +5,4 @@ build
 *.db
 *_output
 *.csv
+*.Xil/
