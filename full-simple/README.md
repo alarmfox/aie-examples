@@ -94,6 +94,8 @@ v++ -c --mode aie \
   --aie.Xelfgen=-j4 \
   --aie.Xmapper=DisableFloorplanning \
   --aie.output-archive=./build/work/aie/hw/libadf.a \
+  --report_dir=./build/work/aie/ \
+  --log_dir=./build/work/hw_emu/logs/ \
   -I/opt/xilinx/2025.2/Vitis/aietools/include \
   -Iaie/ \
   --platform=/opt/xilinx/2025.2/Vitis/base_platforms/xilinx_vek280_base_202520_1/xilinx_vek280_base_202520_1.xpfm \
@@ -108,6 +110,7 @@ Build the the PL application. In this case, it is a simple **datamover** taken f
 v++ --target hw_emu \
   --platform /opt/xilinx/2025.2/Vitis/base_platforms/xilinx_vek280_base_202520_1/xilinx_vek280_base_202520_1.xpfm \
   --temp_dir build/work/_x \
+  --log_dir ./build/work/hw_emu/logs \
   -c -k dma_hls pl/dma_hls.cpp \
   -o build/work/hw_emu/dma_hls.xo
 ```
@@ -134,20 +137,12 @@ Create an `.xsa` to be converted in a `xclbin`
   --platform /opt/xilinx/2025.2/Vitis/base_platforms/xilinx_vek280_base_202520_1/xilinx_vek280_base_202520_1.xpfm \
   --config pl/system.cfg \
   --temp_dir ./build/work/_x \
+  --log_dir ./build/work/hw_emu/logs \
   -o ./build/work/hw_emu/design.xsa \
   build/work/aie/hw/libadf.a build/work/hw_emu/dma_hls.xo
 ```
 
-Create a run script that will be included in the `sd`:
-
-```sh
-#!/bin/bash
-export XILINX_XRT=/usr
-
-./host.exe a.xclbin
-```
-
-Create the package to boot on the simulator. Order of the file matters! (first `host.exe`)
+Create the package to boot on the simulator. File order matters! (first `host.exe`)
 
 ```sh
 v++ -p --target hw_emu \
@@ -160,19 +155,16 @@ v++ -p --target hw_emu \
   --package.boot_mode sd \
   --package.sd_file run.sh \
   --package.sd_file ./build/work/hw_emu/host.exe ./build/work/hw_emu/design.xsa ./build/work/aie/hw/libadf.a \
-  --package.out_dir ./build/work/hw_emu/ \
-  --package.sd_dir ./build/work/hw_emu/
+  --package.out_dir ./build/work/hw_emu/package \
+  --package.sd_dir ./build/work/hw_emu/sd_card
 ```
 
 The important files of the compilation are:
 
 - `build/work/hw_emu/package/launch_hw_emu.sh`: a script that allows to simulate the end-to-end system (PS + AIE + PL);
 - `a.xclbin`: the xclbin file to be loaded from the PS;
-- 
 
 ### Emulator +  Simulator
 
-Running the full virtualized workflow requires:
+To launch the emulation use `build/work/hw_emu/package/launch_hw_emu.sh`.
 
-- Qemu: ARM and PS are emulated using QEMU
-- aiesimulator: AIE AMD software

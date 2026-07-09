@@ -1,0 +1,19 @@
+[
+  {
+    "arguments": [
+      "/opt/petalinux/2025.2/sysroots/x86_64-petalinux-linux/usr/bin/aarch64-amd-linux/aarch64-amd-linux-g++",
+      "-mbranch-protection=standard",
+      "-fstack-protector-strong",
+      "-O2",
+      "-D_FORTIFY_SOURCE=2",
+      "-Wformat",
+      "-Wformat-security",
+      "-Werror=format-security",
+      "--sysroot=/opt/petalinux/2025.2/sysroots/cortexa72-cortexa53-amd-linux",
+      "-c",
+      "main.cc"
+    ],
+    "directory": "/home/ubuntu/versal/full-simple/ps",
+    "file": "/home/ubuntu/versal/full-simple/ps/main.cc"
+  }
+]
