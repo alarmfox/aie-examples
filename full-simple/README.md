@@ -167,4 +167,15 @@ The important files of the compilation are:
 
 ### Emulator +  Simulator
 
-To launch the emulation use `build/work/hw_emu/package/launch_hw_emu.sh`.
+To launch the emulation use `build/work/hw_emu/package/launch_hw_emu.sh`. This file launches both QEMU and AIE simulator creating a complete virtual platform. The VM emulates `aarch64` and starts an OpenSSH server. To enable the forwarding of local port `5555` on VM `22`, run:
+
+```sh
+ ./build/work/hw_emu/package/launch_hw_emu.sh -qemu-args '-net nic -net user,hostfwd=tcp::5555-:22'
+```
+
+The default password for `petalinux` is `password`. Upon first creation, the password can be changed passing `-password` flag to `launch_hw_emu.sh` script. For further information refer to:
+
+-[launch_hw_emu.sh](./build/work/hw_emu/launch_hw_emu.sh)
+-[launch_emulator](XILINX_VITIS/bin/launch_emulator)
+-[launch_emulator.py](XILINX_VITIS/bin/launch_emulator.py)
+
