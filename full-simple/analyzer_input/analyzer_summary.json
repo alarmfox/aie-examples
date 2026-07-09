@@ -1,9 +1,0 @@
-{
-  "thisFile": "/home/ubuntu/versal/full-simple/analyzer_input/analyzer_summary.json",
-  "partitions": [
-    {
-      "name": "libadf.a",
-      "aiecompile_summary": "/home/ubuntu/versal/full-simple/analyzer_input/graph_1.aiecompile_summary_copy"
-    }
-  ]
-}
