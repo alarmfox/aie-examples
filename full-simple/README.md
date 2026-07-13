@@ -91,7 +91,7 @@ First, build AIE application and obtain a `libadf.a`:
 v++ -c --mode aie \
   --target hw \
   --work_dir ./build/work/aie/hw \
-  --aie.Xelfgen=-j4 \
+  --aie.Xelfgen=-j2 \
   --aie.Xmapper=DisableFloorplanning \
   --aie.output-archive=./build/work/aie/hw/libadf.a \
   --report_dir=./build/work/aie/ \
@@ -178,4 +178,3 @@ The default password for `petalinux` is `password`. Upon first creation, the pas
 -[launch_hw_emu.sh](./build/work/hw_emu/launch_hw_emu.sh)
 -[launch_emulator](XILINX_VITIS/bin/launch_emulator)
 -[launch_emulator.py](XILINX_VITIS/bin/launch_emulator.py)
-

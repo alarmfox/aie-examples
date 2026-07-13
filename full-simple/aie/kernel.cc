@@ -3,11 +3,11 @@
 #include <adf.h>
 #include "kernel.h"
 
-void simple(adf::input_buffer<int16> &__restrict in,
-            adf::output_buffer<int16> &__restrict out) {
+void simple(adf::input_buffer<int32> &__restrict in,
+            adf::output_buffer<int32> &__restrict out) {
 
-  int16 *__restrict in_t = in.data();
-  int16 *__restrict out_t = out.data();
+  int32 *__restrict in_t = in.data();
+  int32 *__restrict out_t = out.data();
 
   for (unsigned i = 0; i < VECSIZE; i++) {
     *out_t++ = 1 + *in_t++;

@@ -16,7 +16,7 @@ int main(void) {
   }
 
   ret = graph.end();
-  if(ret!=adf::ok){
+  if(ret != adf::ok){
     printf("End failed\n");
     return ret;
   }
