@@ -90,8 +90,6 @@ int main(int argc, const char **argv) {
    * */
   xrt::graph ghdl = xrt::graph(device, xclbin_uuid, "graph");
 
-  /* ---- I DON'T understand this */
-
   /*  Run the graph */
   printf("Running graph...\n");
   ghdl.reset();
