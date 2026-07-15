@@ -3,3 +3,11 @@ build
 *.a
 *.xclbin
 *.json
+aiesimulator_output
+analyzer_input
+pl_sample_counts
+*/.cache
+*.db
+v++*
+.Xil
+*.csv

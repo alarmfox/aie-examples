@@ -1,8 +1,13 @@
 build
-*.o
-*.a
 *.log
+*.a
+*.xclbin
+*.json
+aiesimulator_output
+analyzer_input
+pl_sample_counts
+*/.cache
 *.db
-*_output
+v++*
+.Xil
 *.csv
-*.Xil/
