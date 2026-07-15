@@ -1,0 +1,4 @@
+CompileFlags:
+  Add:
+    - "-I/opt/xilinx/2025.2/Vitis/aietools/include/"
+    - "-I/opt/xilinx/2025.2/Vitis/include/"
