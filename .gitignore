@@ -11,3 +11,4 @@ pl_sample_counts
 v++*
 .Xil
 *.csv
+.ipcache
