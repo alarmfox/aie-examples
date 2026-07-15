@@ -14,3 +14,4 @@ v++*
 partition/.ipcache
 .xo
 *.summary
+*_output
