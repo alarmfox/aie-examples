@@ -173,7 +173,13 @@ To launch the emulation use `build/work/hw_emu/package/launch_hw_emu.sh`. This f
  ./build/work/hw_emu/package/launch_hw_emu.sh -qemu-args '-net nic -net user,hostfwd=tcp::5555-:22'
 ```
 
-The default password for `petalinux` is `password`. Upon first creation, the password can be changed passing `-password` flag to `launch_hw_emu.sh` script. For further information refer to:
+The default password for `petalinux` is `password`. Connect with SSH using:
+
+```sh
+ssh -p5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null petalinux@localhost
+```
+
+Upon first creation, the password can be changed passing `-password` flag to `launch_hw_emu.sh` script. For further information refer to:
 
 -[launch_hw_emu.sh](./build/work/hw_emu/launch_hw_emu.sh)
 -[launch_emulator](XILINX_VITIS/bin/launch_emulator)
