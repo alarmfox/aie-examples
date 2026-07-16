@@ -10,10 +10,12 @@ LDFLAGS     += --sysroot=$(SDKTARGETSYSROOT)
 LDFLAGS     += -L$(SDKTARGETSYSROOT)/usr/lib
 LDFLAGS     += -L$(XILINX_VITIS)/aietools/lib/aarch64.o
 
-host.exe: host.o
+all: host.exe multithread.exe
+
+%.exe: %.o
 	$(CXX) ${LDFLAGS} -o $@ $<
 
-host.o: host.cc
+%.o: %.cc
 	$(CXX) ${CXXFLAGS} -o $@ -c $<
 
 clean:
