@@ -23,7 +23,7 @@ public:
     adf::dimensions(first.in[0]) = {128};
     adf::dimensions(first.out[0]) = {128};
 
-    adf::source(first) = "aie/kernel.cc";
+    adf::source(first) = "kernel.cc";
 
     adf::runtime<ratio>(first) = 0.1;
   }

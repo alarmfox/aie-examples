@@ -9,7 +9,7 @@ int main(void) {
 
   graph.init();
 
-  ret = graph.run(2);
+  ret = graph.run(1);
 
   if(ret != adf::ok){
     printf("Run failed\n");

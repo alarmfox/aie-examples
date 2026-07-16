@@ -46,7 +46,6 @@ void dma_hls(
     int size)
 {
 #pragma HLS INTERFACE m_axi     port=mem_in  offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi     port=mem_in  offset=slave bundle=gmem0
 #pragma HLS INTERFACE m_axi     port=mem_out offset=slave bundle=gmem1
 
 #pragma HLS INTERFACE axis      port=strm_out

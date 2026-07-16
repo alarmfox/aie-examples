@@ -2,44 +2,47 @@
 include config.mk
 
 PARTITIONS         := pr0 pr1
-AIE_ARCHIVE_pr0    := pr0/libadf0_$(TARGET).a
-AIE_ARCHIVE_pr1    := pr1/libadf1_$(TARGET).a
+AIE_ARCHIVE_pr0    := pr0/libadf0_$(AIE_TARGET).a
+AIE_ARCHIVE_pr1    := pr1/libadf1_$(AIE_TARGET).a
 
-XSA                := aie_base_graph_$(TARGET).xsa
-XOS                := $(patsubst %.cpp,%.xo,$(wildcard pl/*.cpp))
+PL_OUT_DIR         := $(OUT_DIR)/pl/$(PL_TARGET)
+LINK_OUT_DIR       := $(OUT_DIR)/link/$(LINK_TARGET)
+XSA                := $(LINK_OUT_DIR)/aie_base_graph_$(LINK_TARGET).xsa
+XOS                := $(patsubst pl/%.cpp,$(PL_OUT_DIR)/xo/%.xo,$(wildcard pl/*.cpp))
 LIBADF             := $(foreach partition,$(PARTITIONS),$(AIE_ARCHIVE_$(partition)))
 HOSTEXE            := ps/host.exe
-XCLBIN             := $(addsuffix .xclbin,$(PARTITIONS))
+XCLBIN             := $(addprefix $(LINK_OUT_DIR)/,$(addsuffix .xclbin,$(PARTITIONS)))
 
 # PL kernel compile flags. Keep the HLS kernel build centralized here instead of
 # adding per-kernel logic under pl/.
 VPP_PL_FLAGS       := -c
-VPP_PL_FLAGS       += --target $(TARGET)
+VPP_PL_FLAGS       += --target $(PL_TARGET)
 VPP_PL_FLAGS       += --platform $(PLATFORM)
 VPP_PL_FLAGS       += --temp_dir $(WORK_DIR)/_x/pl
-VPP_PL_FLAGS       += --log_dir $(WORK_DIR)/$(TARGET)/logs
+VPP_PL_FLAGS       += --log_dir $(WORK_DIR)/$(PL_TARGET)/logs
 
 # Link flags
 VPP_LINK_FLAGS     := -l
 VPP_LINK_FLAGS     += --platform $(PLATFORM)
-VPP_LINK_FLAGS     += -t $(TARGET)
+VPP_LINK_FLAGS     += -t $(LINK_TARGET)
 VPP_LINK_FLAGS     += --temp_dir $(WORK_DIR)/_x
-VPP_LINK_FLAGS     += --log_dir $(WORK_DIR)/$(TARGET)/logs
+VPP_LINK_FLAGS     += --log_dir $(WORK_DIR)/$(LINK_TARGET)/logs
 VPP_LINK_FLAGS     += --config system.cfg
 VPP_LINK_FLAGS     += --vivado.synth.jobs 1
 VPP_LINK_FLAGS     += --vivado.impl.jobs 1
 
 # Package flags
-VPP_PACKAGE_FLAGS   = -p -s -f $(PLATFORM)
+VPP_PACKAGE_FLAGS   = -p -s -f $(PLATFORM) --target $(PACKAGE_TARGET)
 VPP_PACKAGE_FLAGS  += --temp_dir $(WORK_DIR)/_x/package
-VPP_PACKAGE_FLAGS  += --log_dir $(WORK_DIR)/$(TARGET)/logs
+VPP_PACKAGE_FLAGS  += --log_dir $(WORK_DIR)/$(PACKAGE_TARGET)/logs
+VPP_PACKAGE_FLAGS  += --package.out_dir $(PACKAGE_DIR)/$(PACKAGE_TARGET)
 VPP_PACKAGE_FLAGS  += --package.rootfs $(ROOTFS)
 VPP_PACKAGE_FLAGS  += --package.kernel_image $(KERNEL_IMAGE)
 VPP_PACKAGE_FLAGS  += --package.image_format=ext4
 VPP_PACKAGE_FLAGS  += --package.boot_mode=sd
 VPP_PACKAGE_FLAGS  += --package.defer_aie_run
-VPP_PACKAGE_FLAGS  += --package.sd_file $(XCLBIN)
 VPP_PACKAGE_FLAGS  += --package.sd_file $(HOSTEXE) $(XSA) $(LIBADF)
+# VPP_PACKAGE_FLAGS  += --package.sd_file $(XCLBIN)
 
 ifeq ($(DEBUG),1)
 VPP_PL_FLAGS       += -g
@@ -47,19 +50,25 @@ VPP_LINK_FLAGS     += -g
 VPP_PACKAGE_FLAGS  += -g
 endif
 
-.PHONY: all aie package clean $(PARTITIONS)
+.PHONY: all aie package package-build clean $(PARTITIONS)
 
 all: $(XSA)
 
 $(XSA): $(LIBADF) $(XOS)
+	mkdir -p $(@D)
 	v++ $(VPP_LINK_FLAGS) $(XOS) $(LIBADF) -o $@
 
 # Build each PL .cpp as a Vitis HLS kernel object. The kernel name matches the
 # source basename, e.g. pl/dma_hls.cpp -> --kernel dma_hls.
-pl/%.xo: pl/%.cpp pl/globals.h
+$(PL_OUT_DIR)/xo/%.xo: pl/%.cpp pl/globals.h
+	mkdir -p $(@D)
 	v++ $(VPP_PL_FLAGS) --kernel $* -o $@ $<
 
-package: $(LIBADF) $(XSA) $(HOSTEXE) $(XCLBIN)
+# package: $(LIBADF) $(XSA) $(HOSTEXE) $(XCLBIN)
+package:
+	$(MAKE) package-build PL_TARGET=$(PACKAGE_TARGET) LINK_TARGET=$(PACKAGE_TARGET) PACKAGE_TARGET=$(PACKAGE_TARGET)
+
+package-build: $(LIBADF) $(XSA) $(HOSTEXE)
 	v++ $(VPP_PACKAGE_FLAGS)
 
 $(HOSTEXE):
@@ -70,25 +79,31 @@ $(AIE_ARCHIVE_pr1): pr1
 
 # Build each AIE partition with the same platform and target values.
 $(PARTITIONS):
-	$(MAKE) -C $@ PLATFORM=$(PLATFORM) TARGET=$(TARGET)
+	$(MAKE) -C $@ PLATFORM=$(PLATFORM) TARGET=$(AIE_TARGET)
 
 aie:
 	$(MAKE) $(PARTITIONS)
 
-pr0.xclbin: $(XSA) $(AIE_ARCHIVE_pr0)
-	v++ -p -s -t $(TARGET) -f $(XSA) \
+$(LINK_OUT_DIR)/pr0.xclbin: $(XSA) $(AIE_ARCHIVE_pr0)
+	mkdir -p $(@D)
+	v++ -p -s -t $(LINK_TARGET) -f $(XSA) \
+		--temp_dir $(WORK_DIR)/_x/package/pr0 \
+		--log_dir $(WORK_DIR)/$(LINK_TARGET)/logs \
 		--package.defer_aie_run \
 		--package.aie_overlay $(AIE_ARCHIVE_pr0) \
-		--output pr0.xclbin
+		--output $@
 
-pr1.xclbin: $(XSA) $(AIE_ARCHIVE_pr1)
-	v++ -p -s -t $(TARGET) -f $(XSA) \
+$(LINK_OUT_DIR)/pr1.xclbin: $(XSA) $(AIE_ARCHIVE_pr1)
+	mkdir -p $(@D)
+	v++ -p -s -t $(LINK_TARGET) -f $(XSA) \
+		--temp_dir $(WORK_DIR)/_x/package/pr1 \
+		--log_dir $(WORK_DIR)/$(LINK_TARGET)/logs \
 		--package.defer_aie_run \
 		--package.aie_overlay $(AIE_ARCHIVE_pr1) \
-		--output pr1.xclbin
+		--output $@
 
 clean:
-	rm -rf _x v++_* $(XOS) $(OS) $(LIBADF) pr0/libadf0*.a pr1/libadf1*.a *.o.* *.o *.xpe *.xo.* \
+	rm -rf $(BUILD_DIR) _x v++_* $(OS) $(LIBADF) pr0/libadf0*.a pr1/libadf1*.a *.o.* *.o *.xpe *.xo.* \
 	       vck190_aie_base*.xclbin* *.xsa *.log *.jou xnwOut Work Map_Report.csv \
 	       ilpProblem* sol.db drivers .Xil aiesimu* x86simu* *summary sd_card* *.xclbin boot_image.bif aie.merged.cdo.bin BOOT.BIN *.bif *.pdi .ipcache
 	$(MAKE) -C pr0 clean

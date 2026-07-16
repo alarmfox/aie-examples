@@ -19,7 +19,7 @@ const size_t OUTPUT_SIZE = OUTPUT_LEN* sizeof(int32_t);
  * 7. Transfer data from the global memory in the device back to the host memory.
  * 8. The host code continues processing using the new data in the host memory.
  */
-static void generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &golden) {
+static void pr0_generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &golden) {
    for(size_t i = 0; i < INPUT_LEN; ++i) {
       in[i] = i + 1;
    }
@@ -29,27 +29,22 @@ static void generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &g
    }
 }
 
-int main(int argc, const char **argv) {
+static void pr1_generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &golden) {
+   for(size_t i = 0; i < INPUT_LEN; ++i) {
+      in[i] = i + 1;
+   }
 
-  if(argc < 2) {
-    printf("Usage: <app> xclbin\n");
-    return 1;
-  }
+   for(size_t i = 0; i < INPUT_LEN; ++i) {
+      golden[i] = in[i] + 1;
+   }
+}
 
-  /* Create test data: input and golden */
+static void pr0_load_and_run(xrt::device device, xrt::uuid xclbin_id) {
   std::vector<int32_t> input(INPUT_LEN), golden(OUTPUT_LEN), output(OUTPUT_LEN);
 
-  generate_test_data(input, golden);
+  pr0_generate_test_data(input, golden);
 
-  /* Open the device and load xclbin */
-  xrt::device device = xrt::device(0);
-
-  printf("Loading xclbin: %s\n", argv[1]);
-  xrt::uuid xclbin_uuid = device.load_xclbin(argv[1]);
-
-  /* Open HLS Kernel for DMA control */
-  xrt::kernel dma(device, xclbin_uuid, "dma_hls");
-
+  xrt::kernel dma(device, xclbin_id, "dma_hls:{dma_pr0}");
 
   printf("Loaded DMA HLS: %s\n", dma.get_name().c_str());
 
@@ -68,7 +63,7 @@ int main(int argc, const char **argv) {
   in_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
 
   /* Setup DMA kernel */
-  xrt::run run(dma);
+  xrt::run dma_run(dma);
 
   /* dma_hls has this signature
    *
@@ -78,9 +73,9 @@ int main(int argc, const char **argv) {
    * Set out_bo for argument 1 (mem_out);
    * Set INPUT_LEN (number of words to be sent on AXI4 STREAM) as arg4
    */
-  run.set_arg(0, in_bo);       // mem_in
-  run.set_arg(1, out_bo);      // mem_out
-  run.set_arg(4, INPUT_LEN);    // size, in int32 words
+  dma_run.set_arg(0, in_bo);       // mem_in
+  dma_run.set_arg(1, out_bo);      // mem_out
+  dma_run.set_arg(4, INPUT_LEN);    // size, in int32 words
 
   /* AIE Graph control
    *
@@ -88,7 +83,88 @@ int main(int argc, const char **argv) {
    * 2. run the graph
    * 3. get the results
    * */
-  xrt::graph ghdl = xrt::graph(device, xclbin_uuid, "graph");
+  xrt::graph ghdl = xrt::graph(device, xclbin_id, "pr0_graph");
+
+  /*  Run the graph */
+  printf("Running graphs in parallel...\n");
+  ghdl.reset();
+  ghdl.run(1);
+
+  printf("Running dma kernels...\n");
+  dma_run.start();
+
+  dma_run.wait();
+  ghdl.wait();
+  printf("completed\n");
+
+  /* Synchronize the out_bo */
+  out_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
+  memcpy(output.data(), out_ptr, OUTPUT_SIZE);
+
+#if 1
+  int err = 0;
+  /* Compare results with golden */
+  for(size_t i = 0; i < INPUT_LEN; ++i) {
+    if(output[i] != golden[i]) {
+      printf("PR0 error: got %d; expected %d\n", output[i], golden[i]);
+      err = 1;
+    }
+  }
+
+  if(!err) printf("PR0 terminated with no errors\n");
+
+#else // Simply print result
+  for(size_t i = 0; i < INPUT_LEN; ++i) {
+      printf("%d - %d\n", input[i], output[i]);
+  }
+#endif
+}
+
+static void pr1_load_and_run(xrt::device device, xrt::uuid xclbin_id) {
+  std::vector<int32_t> input(INPUT_LEN), golden(OUTPUT_LEN), output(OUTPUT_LEN);
+
+  pr1_generate_test_data(input, golden);
+
+  xrt::kernel dma(device, xclbin_id, "dma_hls:{dma_pr1}");
+
+  printf("Loaded DMA HLS: %s\n", dma.get_name().c_str());
+
+  /* Allocate buffer objects (BO) */
+  /* This should allocate a buffer attached to the dma group 0 (should be used to read) */
+  xrt::bo in_bo(device, INPUT_SIZE, dma.group_id(0));
+  xrt::bo out_bo(device, OUTPUT_SIZE, dma.group_id(1));
+
+  /* Map the input in host memory to copy data in it */
+  int32_t *in_ptr = in_bo.map<int32_t *>();
+  /* Map the output in host memory to copy data from it */
+  int32_t *out_ptr = out_bo.map<int32_t *>();
+
+  /* Copy input data in in PLIO */
+  memcpy(in_ptr, input.data(), INPUT_SIZE);
+  in_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+
+  /* Setup DMA kernel */
+  xrt::run dma_run(dma);
+
+  /* dma_hls has this signature
+   *
+   * void dma_hls(const int32_t* mem_in, int32_t* mem_out, axis_stream& strm_out, axis_stream& strm_in, int size);
+   *
+   * Set in_bo for argument 0 (mem_input);
+   * Set out_bo for argument 1 (mem_out);
+   * Set INPUT_LEN (number of words to be sent on AXI4 STREAM) as arg4
+   */
+  dma_run.set_arg(0, in_bo);       // mem_in
+  dma_run.set_arg(1, out_bo);      // mem_out
+  dma_run.set_arg(4, INPUT_LEN);    // size, in int32 words
+
+  /* AIE Graph control
+   *
+   * 1. load the graph from the xclbin
+   * 2. run the graph
+   * 3. get the results
+   * */
+  xrt::graph ghdl = xrt::graph(device, xclbin_id, "pr1_graph");
 
   /*  Run the graph */
   printf("Running graph...\n");
@@ -96,30 +172,50 @@ int main(int argc, const char **argv) {
   ghdl.run(1);
 
   printf("Running dma kernel...\n");
-  run.start();
+  dma_run.start();
 
-  run.wait();
+  dma_run.wait();
   ghdl.wait();
   printf("completed\n");
-  /* ------ */
 
   /* Synchronize the out_bo */
   out_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
-
   memcpy(output.data(), out_ptr, OUTPUT_SIZE);
 
-#if 0
+#if 1
+  int err = 0;
   /* Compare results with golden */
   for(size_t i = 0; i < INPUT_LEN; ++i) {
     if(output[i] != golden[i]) {
-      printf("error: got %d; expected %d\n", output[i], golden[i]);
+      printf("PR1 error: got %d; expected %d\n", output[i], golden[i]);
     }
   }
+  if(!err) printf("PR1 terminated with no errors\n");
+
 #else // Simply print result
   for(size_t i = 0; i < INPUT_LEN; ++i) {
       printf("%d - %d\n", input[i], output[i]);
   }
 #endif
+}
+
+int main(int argc, const char **argv) {
+
+  if(argc < 2) {
+    printf("Usage: <app> xclbin\n");
+    return 1;
+  }
+
+  xrt::device device = xrt::device(0);
+  xrt::uuid xclbin_id = device.load_xclbin(argv[1]);
+
+  pr1_load_and_run(device, xclbin_id);
+  pr0_load_and_run(device, xclbin_id);
+
+  // std::thread p0(pr0_load_and_run, device, xclbin_id), p1(pr1_load_and_run, device, xclbin_id);
+  //
+  // p0.join();
+  // p1.join();
 
   return 0;
 }
