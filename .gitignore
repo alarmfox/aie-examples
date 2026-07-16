@@ -12,7 +12,7 @@ v++*
 .Xil
 *.csv
 partition/.ipcache
-.xo
+*.xo
 *.summary
 *_summary
 *_output
