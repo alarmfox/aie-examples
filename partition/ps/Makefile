@@ -1,22 +1,35 @@
-CXXFLAGS     = -std=c++17
+include ../config.mk
+
+CXXFLAGS    := -std=c++17
 CXXFLAGS    += -I$(XILINX_HLS)/include/
 CXXFLAGS    += -I$(SDKTARGETSYSROOT)/usr/include/xrt/
 CXXFLAGS    += --sysroot=$(SDKTARGETSYSROOT)
-CXXFLAGS    += -O1
 CXXFLAGS    += -fmessage-length=0
 
-LDFLAGS      = -lgcc -lc -luuid -lxrt_coreutil -lrt -ldl -lcrypt -lstdc++
-LDFLAGS     += --sysroot=$(SDKTARGETSYSROOT)
+ifeq ($(DEBUG),1)
+CXXFLAGS   += -g -O0
+else
+CXXFLAGS   += -O1
+endif
+
+LDFLAGS     := --sysroot=$(SDKTARGETSYSROOT)
 LDFLAGS     += -L$(SDKTARGETSYSROOT)/usr/lib
 LDFLAGS     += -L$(XILINX_VITIS)/aietools/lib/aarch64.o
 
-all: host.exe multithread.exe
+LDLIBS      := -lgcc -lc -luuid -lxrt_coreutil -lrt -ldl -lcrypt -lstdc++
 
-%.exe: %.o
-	$(CXX) ${LDFLAGS} -o $@ $<
+SOURCES     := host.cc multithread.cc
+OBJS        := $(SOURCES:%.cc=$(OUT_DIR)/%.o)
+EXES        := $(SOURCES:%.cc=$(OUT_DIR)/%.exe)
 
-%.o: %.cc
-	$(CXX) ${CXXFLAGS} -o $@ -c $<
+all: $(EXES)
+
+$(OUT_DIR)/%.exe: $(OUT_DIR)/%.o
+	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $<
+
+$(OUT_DIR)/%.o: %.cc
+	@mkdir -p $(OUT_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
-	rm -f *.o *.exe
+	rm -f $(OBJS) $(EXES)

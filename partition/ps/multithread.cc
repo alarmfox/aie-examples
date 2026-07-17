@@ -1,3 +1,4 @@
+#include <mutex>
 #include <stdio.h>
 #include <string.h>
 #include <thread>
@@ -10,6 +11,8 @@ const size_t INPUT_LEN = 128;
 const size_t INPUT_SIZE = INPUT_LEN * sizeof(int32_t);
 const size_t OUTPUT_LEN = 128;
 const size_t OUTPUT_SIZE = OUTPUT_LEN* sizeof(int32_t);
+
+static std::mutex aie_mutex;
 
 /*
  * 1. Open the device and load XCLBIN. Get the UUID as needed.
@@ -47,7 +50,7 @@ static void run_partition(const struct partition_config &cfg, const xrt::aie::de
   /* DMA */
   xrt::kernel dma(device, xclbin_id, cfg.kernel_name);
 
-  printf("Loaded DMA HLS: %s\n", dma.get_name().c_str());
+  printf("%s: loaded DMA HLS: %s\n", cfg.label, dma.get_name().c_str());
 
   /* Allocate buffer objects (BO) */
   /* This should allocate a buffer attached to the dma group 0 (should be used to read) */
@@ -62,6 +65,8 @@ static void run_partition(const struct partition_config &cfg, const xrt::aie::de
   /* Copy input data in in PLIO */
   memcpy(in_ptr, input.data(), INPUT_SIZE);
   in_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+
+  /* Get a graph handle */
 
   /* Setup DMA kernel */
   xrt::run dma_run(dma);
@@ -78,73 +83,95 @@ static void run_partition(const struct partition_config &cfg, const xrt::aie::de
   dma_run.set_arg(1, out_bo);      // mem_out
   dma_run.set_arg(4, INPUT_LEN);    // size, in int32 words
 
-  /* AIE Graph control
-   *
-   * 1. load the graph from the xclbin
-   * 2. run the graph
-   * 3. get the results
-   * */
-  xrt::graph ghdl = xrt::graph(device, xclbin_id, cfg.graph_name);
+  /* Get the handle to the graph */
+  xrt::graph graph{
+    device,
+      xclbin_id,
+      cfg.graph_name,
+      xrt::graph::access_mode::primary
+  };
 
-  /*  Run the graph */
-  printf("%s: running graphs...\n", cfg.graph_name);
-  ghdl.run(1);
+  /*
+   * Serialize the control-plane call, not graph execution.
+   */
+  {
+    std::lock_guard<std::mutex> lock(aie_mutex);
 
-  printf("%s: running dma kernel...\n", cfg.graph_name);
+    printf("%s: starting graph\n", cfg.graph_name);
+    graph.run(1);
+  }
+
+  /* Launch DMA kernel */
   dma_run.start();
-
   dma_run.wait();
-  ghdl.wait();
-  printf("completed\n");
+
+  /*
+   * Serialize also the wait for now
+   */
+  {
+    std::lock_guard<std::mutex> lock(aie_mutex);
+
+    graph.wait();
+    printf("%s: graph completed\n", cfg.graph_name);
+  }
 
   /* Synchronize the out_bo */
   out_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
   memcpy(output.data(), out_ptr, OUTPUT_SIZE);
 
-#if 1
-  int err = 0;
-  /* Compare results with golden */
-  for(size_t i = 0; i < INPUT_LEN; ++i) {
-    if(output[i] != golden[i]) {
-      printf("%s error: got %d; expected %d\n", cfg.graph_name, output[i], golden[i]);
-      err = 1;
-    }
-  }
+  {
+    std::lock_guard<std::mutex> lock(aie_mutex);
 
-  if(!err) printf("%s terminated with no errors\n", cfg.graph_name);
+#if 1
+    int err = 0;
+    /* Compare results with golden */
+    for(size_t i = 0; i < INPUT_LEN; ++i) {
+      if(output[i] != golden[i]) {
+        printf("%s error: got %d; expected %d\n", cfg.graph_name, output[i], golden[i]);
+        err = 1;
+      }
+    }
+
+    if(!err) printf("%s terminated with no errors\n", cfg.graph_name);
 
 #else // Simply print result
-  for(size_t i = 0; i < INPUT_LEN; ++i) {
+    for(size_t i = 0; i < INPUT_LEN; ++i) {
       printf("%d - %d\n", input[i], output[i]);
-  }
+    }
 #endif
+  }
 }
 
 int main(int argc, const char **argv) {
 
   if(argc < 2) {
-    printf("Usage: <app> xclbin\n");
+    printf("Usage: <app> .xclbin\n");
     return 1;
   }
 
-  const struct partition_config p0 = {
+  const struct partition_config pr0 = {
     .label = "pr0",
     .kernel_name = "dma_hls:{dma_pr0}",
     .graph_name = "pr0_graph",
     .expected_increment = 2
   };
-  const struct partition_config p1 = {
+
+  const struct partition_config pr1 = {
     .label = "pr1",
     .kernel_name = "dma_hls:{dma_pr1}",
     .graph_name = "pr1_graph",
     .expected_increment = 1
   };
 
-  xrt::aie::device device  {0, xrt::aie::device::access_mode::shared};
+  xrt::aie::device device  {0, xrt::aie::device::access_mode::primary};
   xrt::uuid xclbin_id = device.load_xclbin(argv[1]);
 
-  std::thread t0(run_partition, p0, device, xclbin_id);
-  std::thread t1(run_partition, p1, device, xclbin_id);
+  /*
+   * Construct graph handles sequentially.
+   * Be explicit about their access mode.
+   */
+  std::thread t0(run_partition, std::cref(pr0), std::cref(device), std::cref(xclbin_id));
+  std::thread t1(run_partition, std::cref(pr1), std::cref(device), std::cref(xclbin_id));
 
   t0.join();
   t1.join();
