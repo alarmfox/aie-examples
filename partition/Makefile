@@ -12,6 +12,8 @@ XOS                := $(patsubst pl/%.cpp,$(PL_OUT_DIR)/xo/%.xo,$(wildcard pl/*.
 LIBADF             := $(foreach partition,$(PARTITIONS),$(AIE_ARCHIVE_$(partition)))
 HOSTEXE            := ps/host.exe
 XCLBIN             := $(addprefix $(LINK_OUT_DIR)/,$(addsuffix .xclbin,$(PARTITIONS)))
+PL_XCLBIN          := $(LINK_OUT_DIR)/pl.xclbin
+PL_PACKAGE_CONFIG  := package_pl_only.cfg
 
 # PL kernel compile flags. Keep the HLS kernel build centralized here instead of
 # adding per-kernel logic under pl/.
@@ -50,7 +52,7 @@ VPP_LINK_FLAGS     += -g
 VPP_PACKAGE_FLAGS  += -g
 endif
 
-.PHONY: all aie package package-build clean $(PARTITIONS)
+.PHONY: all aie pl-xclbin package package-build clean $(PARTITIONS)
 
 all: $(XSA)
 
@@ -83,6 +85,16 @@ $(PARTITIONS):
 
 aie:
 	$(MAKE) $(PARTITIONS)
+
+pl-xclbin: $(PL_XCLBIN)
+
+$(PL_XCLBIN): $(XSA) $(PL_PACKAGE_CONFIG)
+	mkdir -p $(@D)
+	v++ -p -s -t $(LINK_TARGET) -f $(XSA) \
+		--temp_dir $(WORK_DIR)/_x/package/pl \
+		--log_dir $(WORK_DIR)/$(LINK_TARGET)/logs \
+		--config $(PL_PACKAGE_CONFIG) \
+		--output $@
 
 $(LINK_OUT_DIR)/pr0.xclbin: $(XSA) $(AIE_ARCHIVE_pr0)
 	mkdir -p $(@D)

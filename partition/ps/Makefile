@@ -18,7 +18,7 @@ LDFLAGS     += -L$(XILINX_VITIS)/aietools/lib/aarch64.o
 
 LDLIBS      := -lgcc -lc -luuid -lxrt_coreutil -lrt -ldl -lcrypt -lstdc++
 
-SOURCES     := host.cc multithread.cc
+SOURCES     := host.cc multithread.cc container.cc
 OBJS        := $(SOURCES:%.cc=$(OUT_DIR)/%.o)
 EXES        := $(SOURCES:%.cc=$(OUT_DIR)/%.exe)
 
