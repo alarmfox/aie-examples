@@ -16,3 +16,5 @@ partition/.ipcache
 *.summary
 *_summary
 *_output
+*.o
+*.exe
