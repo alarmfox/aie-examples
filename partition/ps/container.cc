@@ -12,21 +12,18 @@
 
 #define STACK_SIZE (1024 * 1024)
 #define NUM_CHILD  2
-#define MAX_STRING_SIZE 256
+#define ITERATIONS 1
 
 const size_t INPUT_LEN = 128;
 const size_t INPUT_SIZE = INPUT_LEN * sizeof(int32_t);
 const size_t OUTPUT_LEN = 128;
 const size_t OUTPUT_SIZE = OUTPUT_LEN* sizeof(int32_t);
 
-struct child_args {
-  size_t index;
-};
-
 struct child_info {
-  pid_t pid;
-  int wstatus;
+  pid_t    pid;
+  int      wstatus;
   uint8_t *stack;
+  size_t   index;
 };
 
 static void generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &golden, int amt) {
@@ -39,56 +36,70 @@ static void generate_test_data(std::vector<int32_t> &in, std::vector<int32_t> &g
    }
 }
 
-static int child(void *ptr) {
-  const struct child_args *args = (const struct child_args *)ptr;
-
-  char graph_name[MAX_STRING_SIZE], xclbin_file[MAX_STRING_SIZE];
-  snprintf(graph_name,  MAX_STRING_SIZE, "pr%zu_graph",     args->index);
-  snprintf(xclbin_file, MAX_STRING_SIZE, "pr%zu_aie.xclbin", args->index);
+static int aie_run_partition(size_t index, int iterations) {
+  const std::string xclbin_file = "pr" + std::to_string(index) + "_aie.xclbin";
+  const std::string graph_name  = "pr" + std::to_string(index) + "_graph";
 
   try {
     xrt::device device{0};
 
-    xrt::xclbin xclbin{std::string(xclbin_file)};
+    xrt::xclbin xclbin{xclbin_file};
     xrt::uuid uuid = device.register_xclbin(xclbin);
 
-    // This is the step that programs the partition.
+    /* Creating the context is what programs the partition. */
     xrt::hw_context ctx{device, uuid};
 
     xrt::graph g{ctx, graph_name};
-    g.run(1);
+    g.run(iterations);
     g.wait();
-
-    // ctx must outlive the graph; do not return before wait() completes.
-  } catch (const std::exception &e) {
-    fprintf(stderr, "[CHILD %zu] %s\n", args->index, e.what());
+  }
+  catch (const std::exception &e) {
+    fprintf(stderr, "[CHILD %zu] %s\n", index, e.what());
     return 1;
   }
   return 0;
 }
 
+static int child(void *ptr) {
+  const struct child_info *info = (const struct child_info *)ptr;
+  return aie_run_partition(info->index, ITERATIONS);
+}
+
 int main(void) {
   struct child_info children[NUM_CHILD];
 
-  for(size_t i = 0; i < NUM_CHILD; ++i) {
-    struct child_args args = { .index = i };
-
-    children[i].stack = (uint8_t*)malloc(STACK_SIZE);
+  for (size_t i = 0; i < NUM_CHILD; ++i) {
+    children[i].index = i;
+    children[i].stack = (uint8_t *)malloc(STACK_SIZE);
+    if (!children[i].stack) {
+      perror("malloc");
+      return 1;
+    }
 
     children[i].pid = clone(child, children[i].stack + STACK_SIZE,
-        SIGCHLD,
-        &args);
+                            SIGCHLD, &children[i]);
+    if (children[i].pid == -1) {
+      perror("clone");
+      return 1;
+    }
 
-    printf("[PARENT] started child with PID %d\n", children[i].pid);
+    printf("[PARENT] started child with PID %d for partition %zu\n",
+           children[i].pid, i);
   }
 
-  for(size_t i = 0; i < NUM_CHILD; ++i) {
+  int failures = 0;
+  for (size_t i = 0; i < NUM_CHILD; ++i) {
     waitpid(children[i].pid, &children[i].wstatus, 0);
-    int ret = (WIFEXITED(children[i].wstatus) && WEXITSTATUS(children[i].wstatus) == 0) ? 0 : 1;
 
-    printf("[PARENT] child (PID=%d) exited with code %d\n", children[i].pid, ret);
+    int ret = (WIFEXITED(children[i].wstatus) &&
+               WEXITSTATUS(children[i].wstatus) == 0) ? 0 : 1;
+    failures += ret;
+
+    printf("[PARENT] child (PID=%d, partition %zu) exited with code %d\n",
+           children[i].pid, i, ret);
+
+    free(children[i].stack);
   }
 
-
-  return 0;
+  return failures ? 1 : 0;
 }
