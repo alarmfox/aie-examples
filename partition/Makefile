@@ -10,7 +10,7 @@ LINK_OUT_DIR       := $(OUT_DIR)/link/$(LINK_TARGET)
 XSA                := $(LINK_OUT_DIR)/aie_base_graph_$(LINK_TARGET).xsa
 XOS                := $(patsubst pl/%.cpp,$(PL_OUT_DIR)/xo/%.xo,$(wildcard pl/*.cpp))
 LIBADF             := $(foreach partition,$(PARTITIONS),$(AIE_ARCHIVE_$(partition)))
-HOSTEXE            := ps/host.exe
+HOSTEXE            := ps/build/out/host.exe
 XCLBIN             := $(addprefix $(LINK_OUT_DIR)/,$(addsuffix .xclbin,$(PARTITIONS)))
 PL_XCLBIN          := $(LINK_OUT_DIR)/pl.xclbin
 PL_PACKAGE_CONFIG  := package_pl_only.cfg
@@ -90,7 +90,7 @@ pl-xclbin: $(PL_XCLBIN)
 
 $(PL_XCLBIN): $(XSA) $(PL_PACKAGE_CONFIG)
 	mkdir -p $(@D)
-	v++ -p -s -t $(LINK_TARGET) -f $(XSA) \
+	v++ -p -s -t hw -f $(XSA) \
 		--temp_dir $(WORK_DIR)/_x/package/pl \
 		--log_dir $(WORK_DIR)/$(LINK_TARGET)/logs \
 		--config $(PL_PACKAGE_CONFIG) \
