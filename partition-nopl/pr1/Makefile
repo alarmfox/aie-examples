@@ -6,4 +6,4 @@ PARTITION_NCOLS := 7
 
 include ../aie-partition.mk
 
-VPP_AIE_FLAGS += -Iaie/
+VPP_AIE_C_FLAGS += -Iaie/

@@ -36,7 +36,6 @@ static const unsigned ITERATIONS  = 4;
 static const size_t   TOTAL_ELEMS = VECSIZE * ITERATIONS;
 static const size_t   XFER_BYTES  = TOTAL_ELEMS * sizeof(int16_t);
 
-/* Must be a bank reserved in the DTB, not the CMA fallback. */
 static const int MEMORY_GROUP = 1;
 
 struct child_info {
@@ -62,7 +61,6 @@ static int run_partition(const struct child_info *info) {
     /* Creating the context is what programs the partition. */
     xrt::hw_context ctx{device, uuid};
     printf("[%zu] context created\n", i);
-    fflush(stdout);
 
     auto in_bo  = xrt::aie::bo(ctx, XFER_BYTES,
                                xrt::bo::flags::normal, MEMORY_GROUP);
@@ -88,7 +86,7 @@ static int run_partition(const struct child_info *info) {
 
     size_t errors = 0;
     for (size_t n = 0; n < TOTAL_ELEMS; ++n) {
-      if (out_ptr[n] != (int16_t)(in_ptr[n] + 1)) {
+      if (out_ptr[n] != (int16_t)(in_ptr[n] + i + 1)) {
         ++errors;
       }
     }

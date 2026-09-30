@@ -8,4 +8,5 @@
 #define VECSIZE 128
 
 void simple(adf::input_buffer<int16> &__restrict in, adf::output_buffer<int16> &__restrict out);
+
 #endif //! KERNEL_H
