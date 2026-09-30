@@ -22,3 +22,12 @@ _ide
 *baremetal_package_metadata.cpp
 *.bin
 *.bif
+
+# v++ link/package outputs
+_x
+.ipcache
+platform.xsa*
+*.xclbin
+*.package_summary
+*.link_summary
+*.jou
