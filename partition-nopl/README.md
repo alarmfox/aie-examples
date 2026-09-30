@@ -1,4 +1,4 @@
-# Partition with nopl
+# Partition with no-pl
 
 Compile two independent partitions (`pr0` and `pr1`). The goal is to use these partitions with 2 different processes in different namespaces (containers).
 
