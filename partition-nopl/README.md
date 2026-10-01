@@ -37,7 +37,7 @@ flowchart LR
 - **Package**: needs the fixed XSA plus **every** libadf.a, in the **same order as the link**.
   The xclbins and `host.exe` are just files copied onto the SD card
 
-The goal is to provide an abstraction of AIE partitions that can be used with DRA model like this:
+The **goal** (~very very far~) is to provide an abstraction of AIE partitions that can be used with DRA model like this:
 
 ```sh
 # ResourceSlice: one device per static slot
