@@ -84,10 +84,8 @@ static int run_partition(const struct child_info *info) {
     fflush(stdout);
     usleep(hold_ms * 1000);
 
-    auto in_bo  = xrt::aie::bo(ctx, XFER_BYTES,
-                               xrt::bo::flags::normal, MEMORY_GROUP);
-    auto out_bo = xrt::aie::bo(ctx, XFER_BYTES,
-                               xrt::bo::flags::normal, MEMORY_GROUP);
+    auto in_bo  = xrt::aie::bo(ctx, XFER_BYTES, xrt::bo::flags::normal, MEMORY_GROUP);
+    auto out_bo = xrt::aie::bo(ctx, XFER_BYTES, xrt::bo::flags::normal, MEMORY_GROUP);
 
     auto in_ptr  = in_bo.map<int16_t *>();
     auto out_ptr = out_bo.map<int16_t *>();
@@ -120,8 +118,7 @@ static int run_partition(const struct child_info *info) {
     }
 
     ghdl.end();
-    printf("[%zu] %.3f %s (%zu mismatches)\n", i, now(),
-           errors ? "FAILED" : "PASSED", errors);
+    printf("[%zu] %.3f %s (%zu mismatches)\n", i, now(), errors ? "FAILED" : "PASSED", errors);
     return errors ? 1 : 0;
   }
   catch (const std::exception &e) {
@@ -200,7 +197,9 @@ int main(int argc, char *argv[]) {
     }
 
     printf("[parent] child %zu pid %d -> %s (%s)\n",
-           i, children[i].pid, children[i].graph.c_str(),
+           i,
+           children[i].pid,
+           children[i].graph.c_str(),
            children[i].xclbin.c_str());
   }
 
