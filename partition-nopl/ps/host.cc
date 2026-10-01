@@ -3,7 +3,9 @@
  *
  * Each child opens the device, registers one AIE-only xclbin, creates a
  * hardware context from it, and runs that partition's graph over GMIO.
- * The parent only clones and reaps: it never touches XRT.
+ * The parent only clones and reaps: it never touches XRT. Each child runs
+ * in its own mount, PID, UTS, IPC and network namespaces (plus a user
+ * namespace when not root), like a container without cgroups.
  *
  *     ./host <xclbin>,<graph> [<xclbin>,<graph> ...]
  *
@@ -19,7 +21,9 @@
 
 #include <sched.h>
 #include <signal.h>
+#include <time.h>
 #include <unistd.h>
+#include <sys/mount.h>
 #include <sys/wait.h>
 
 #include "xrt/xrt_device.h"
@@ -37,6 +41,18 @@ static const size_t   TOTAL_ELEMS = VECSIZE * ITERATIONS;
 static const size_t   XFER_BYTES  = TOTAL_ELEMS * sizeof(int16_t);
 
 static const int MEMORY_GROUP = 1;
+
+/* Random hold after context creation, to widen the window in which
+ * partitions could overlap. */
+static const unsigned HOLD_MIN_MS = 500;
+static const unsigned HOLD_MAX_MS = 3000;
+
+/* Monotonic seconds: comparable across the children. */
+static double now(void) {
+  struct timespec ts;
+  clock_gettime(CLOCK_MONOTONIC, &ts);
+  return ts.tv_sec + ts.tv_nsec / 1e9;
+}
 
 struct child_info {
   pid_t       pid;
@@ -59,8 +75,14 @@ static int run_partition(const struct child_info *info) {
     auto uuid   = device.register_xclbin(xclbin);
 
     /* Creating the context is what programs the partition. */
+    printf("[%zu] %.3f requesting context\n", i, now());
+    fflush(stdout);
     xrt::hw_context ctx{device, uuid};
-    printf("[%zu] context created\n", i);
+    srand((unsigned)(now() * 1e6) ^ (unsigned)i); /* getpid() is 1 in every child */
+    unsigned hold_ms = HOLD_MIN_MS + rand() % (HOLD_MAX_MS - HOLD_MIN_MS);
+    printf("[%zu] %.3f context created, holding %u ms\n", i, now(), hold_ms);
+    fflush(stdout);
+    usleep(hold_ms * 1000);
 
     auto in_bo  = xrt::aie::bo(ctx, XFER_BYTES,
                                xrt::bo::flags::normal, MEMORY_GROUP);
@@ -98,7 +120,7 @@ static int run_partition(const struct child_info *info) {
     }
 
     ghdl.end();
-    printf("[%zu] %s (%zu mismatches)\n", i,
+    printf("[%zu] %.3f %s (%zu mismatches)\n", i, now(),
            errors ? "FAILED" : "PASSED", errors);
     return errors ? 1 : 0;
   }
@@ -109,7 +131,21 @@ static int run_partition(const struct child_info *info) {
 }
 
 static int child(void *ptr) {
-  return run_partition((const struct child_info *)ptr);
+  const struct child_info *info = (const struct child_info *)ptr;
+
+  /* Keep our mounts from propagating back to the host, as runtimes do. */
+  if (mount(NULL, "/", NULL, MS_REC | MS_PRIVATE, NULL) == -1) {
+    perror("mount private");
+    return 1;
+  }
+
+  std::string host = "part" + std::to_string(info->index);
+  if (sethostname(host.c_str(), host.size()) == -1) {
+    perror("sethostname");
+    return 1;
+  }
+
+  return run_partition(info);
 }
 
 int main(int argc, char *argv[]) {
@@ -146,12 +182,18 @@ int main(int argc, char *argv[]) {
     }
 
     /*
-     * SIGCHLD only: separate address space, same as fork(). Add
-     * CLONE_NEWPID | CLONE_NEWNS here for per-container isolation.
-     * Never CLONE_VM: each child needs its own XRT state.
+     * Container-like isolation minus cgroups. Never CLONE_VM: each child
+     * needs its own XRT state. Unprivileged runs also need a user namespace
+     * to be allowed to create the others.
      */
+    int flags = CLONE_NEWNS | CLONE_NEWPID | CLONE_NEWUTS | CLONE_NEWIPC |
+                CLONE_NEWNET | SIGCHLD;
+    if (geteuid() != 0) {
+      flags |= CLONE_NEWUSER;
+    }
+
     children[i].pid = clone(child, children[i].stack + STACK_SIZE,
-                            SIGCHLD, &children[i]);
+                            flags, &children[i]);
     if (children[i].pid == -1) {
       perror("clone");
       return 1;
