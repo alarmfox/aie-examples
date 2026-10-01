@@ -77,12 +77,18 @@ static int run_partition(const struct child_info *info) {
 
     auto ghdl = xrt::graph(ctx, info->graph);
 
-    in_bo.async(gmio_in, XCL_BO_SYNC_BO_GMIO_TO_AIE, XFER_BYTES, 0);
+    /* GMIO ports must be resolved through the context: bo.async(port, ...)
+     * looks them up on the device, which has no AIE when using hw_context. */
+    auto gmio_in_buf  = xrt::aie::buffer(ctx, gmio_in);
+    auto gmio_out_buf = xrt::aie::buffer(ctx, gmio_out);
+
+    gmio_in_buf.async(in_bo, XCL_BO_SYNC_BO_GMIO_TO_AIE, XFER_BYTES, 0);
     ghdl.run(ITERATIONS);
-    auto out_run = out_bo.async(gmio_out, XCL_BO_SYNC_BO_AIE_TO_GMIO,
-                                XFER_BYTES, 0);
+    gmio_out_buf.async(out_bo, XCL_BO_SYNC_BO_AIE_TO_GMIO, XFER_BYTES, 0);
+    /* Every async() needs its wait(): an unwaited transfer hangs teardown. */
+    gmio_in_buf.wait();
     ghdl.wait();
-    out_run.wait();
+    gmio_out_buf.wait();
 
     size_t errors = 0;
     for (size_t n = 0; n < TOTAL_ELEMS; ++n) {
