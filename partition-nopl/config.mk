@@ -8,8 +8,8 @@ AIE_TARGET     ?= hw
 TARGET         ?= hw
 
 PLATFORM       ?= $(XILINX_VITIS)/base_platforms/xilinx_vek280_base_202520_1/xilinx_vek280_base_202520_1.xpfm
-ROOTFS         ?= $(XILINX_VITIS)/../../xilinx-versal-common-v2025.2/rootfs.ext4
-KERNEL_IMAGE   ?= $(XILINX_VITIS)/../../xilinx-versal-common-v2025.2/Image
+ROOTFS         ?= petalinux-bpf/images/linux/rootfs.ext4
+KERNEL_IMAGE   ?= petalinux-bpf/images/linux/Image
 
 # Keep generated files under a consistent build tree in each Makefile's directory.
 BUILD_DIR      ?= build
