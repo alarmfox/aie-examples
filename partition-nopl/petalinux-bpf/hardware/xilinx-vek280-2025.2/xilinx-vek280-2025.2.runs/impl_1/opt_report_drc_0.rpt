@@ -1,0 +1,41 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sat Nov 15 02:49:08 2025
+| Host         : xcossw07 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_drc -file opt_report_drc_0.rpt -pb opt_report_drc_0.pb -rpx opt_report_drc_0.rpx
+| Design       : project_1_wrapper
+| Device       : xcve2802-vsvh1760-2MP-e-S
+| Speed File   : -2MP
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 1
++----------+----------+--------------------+--------+
+| Rule     | Severity | Description        | Checks |
++----------+----------+--------------------+--------+
+| NOCCHK-1 | Error    | Check NOC solution | 1      |
++----------+----------+--------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+NOCCHK-1#1 Error
+Check NOC solution  
+The NOC solution is invalid and cannot be used to generate PDI. Please run update_noc_qos TCL command to generate a new NOC solution.
+Related violations: <none>
+
+

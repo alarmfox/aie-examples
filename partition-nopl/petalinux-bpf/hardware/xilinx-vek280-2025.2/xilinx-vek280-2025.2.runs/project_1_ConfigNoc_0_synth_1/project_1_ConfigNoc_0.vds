@@ -1,0 +1,267 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Nov 15 02:36:15 2025
+# Process ID         : 3164680
+# Current directory  : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1
+# Command line       : vivado -log project_1_ConfigNoc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_1_ConfigNoc_0.tcl
+# Log file           : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/project_1_ConfigNoc_0.vds
+# Journal file       : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/vivado.jou
+# Running On         : xcossw07
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.4 LTS
+# Processor Detail   : AMD EPYC 7302 16-Core Processor
+# CPU Frequency      : 3286.619 MHz
+# CPU Physical cores : 32
+# CPU Logical cores  : 64
+# Host memory        : 540603 MB
+# Swap memory        : 6726 MB
+# Total Virtual      : 547329 MB
+# Available Virtual  : 469593 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+500 Beta devices matching pattern found, 500 enabled.
+enable_beta_device: Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 1673.758 ; gain = 204.691 ; free physical = 370673 ; free virtual = 433828
+source project_1_ConfigNoc_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1688.602 ; gain = 14.844 ; free physical = 364880 ; free virtual = 428067
+Command: synth_design -top project_1_ConfigNoc_0 -part xcve2802-vsvh1760-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Device 21-403] Loading part xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3166058
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3171.172 ; gain = 243.688 ; free physical = 353816 ; free virtual = 417050
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'IF_NOC_AXI_TDEST', assumed default net type 'wire' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0.sv:302]
+INFO: [Synth 8-6157] synthesizing module 'project_1_ConfigNoc_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/synth/project_1_ConfigNoc_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_e614' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:10]
+INFO: [Synth 8-6157] synthesizing module 'bd_e614_M00_AXI_nsu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0.sv:54]
+INFO: [Synth 8-6157] synthesizing module 'bd_e614_M00_AXI_nsu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:69]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NSU128' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:112797]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NSU128' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:112797]
+WARNING: [Synth 8-689] width (17) of port connection 'IF_NOC_AXI_RUSER' does not match port width (16) of module 'NOC_NSU128' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:257]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_ARUSER' of module 'NOC_NSU128' is unconnected for instance 'NOC_NSU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:214]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_AWUSER' of module 'NOC_NSU128' is unconnected for instance 'NOC_NSU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:214]
+WARNING: [Synth 8-7023] instance 'NOC_NSU128_INST' of module 'NOC_NSU128' has 76 connections declared, but only 74 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:214]
+INFO: [Synth 8-6155] done synthesizing module 'bd_e614_M00_AXI_nsu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0_top.sv:69]
+WARNING: [Synth 8-689] width (1) of port connection 'IF_NOC_AXI_TDEST' does not match port width (10) of module 'bd_e614_M00_AXI_nsu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0.sv:302]
+INFO: [Synth 8-6155] done synthesizing module 'bd_e614_M00_AXI_nsu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/hdl/bfm/bd_e614_M00_AXI_nsu_0.sv:54]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7071] port 'AXI_OUT' of module 'bd_e614_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+WARNING: [Synth 8-7023] instance 'M00_AXI_nsu' of module 'bd_e614_M00_AXI_nsu_0' has 52 connections declared, but only 43 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:148]
+INFO: [Synth 8-6155] done synthesizing module 'bd_e614' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/synth/bd_e614.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_ConfigNoc_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/synth/project_1_ConfigNoc_0.v:53]
+INFO: [Synth 8-7129] Port IF_NOC_AXI_RUSER[16] in module bd_e614_M00_AXI_nsu_0_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port S00_INI_internoc[0] in module bd_e614 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3263.141 ; gain = 335.656 ; free physical = 351990 ; free virtual = 415225
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3263.141 ; gain = 335.656 ; free physical = 351905 ; free virtual = 415139
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3263.141 ; gain = 335.656 ; free physical = 351904 ; free virtual = 415139
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3274.109 ; gain = 0.000 ; free physical = 352018 ; free virtual = 415254
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/xdc/bd_e614_M00_AXI_nsu_0.xdc] for cell 'inst/M00_AXI_nsu/bd_e614_M00_AXI_nsu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/bd_0/ip/ip_0/xdc/bd_e614_M00_AXI_nsu_0.xdc] for cell 'inst/M00_AXI_nsu/bd_e614_M00_AXI_nsu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0_board.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0_board.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_ConfigNoc_0/project_1_ConfigNoc_0.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_ConfigNoc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_ConfigNoc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3319.770 ; gain = 0.000 ; free physical = 353780 ; free virtual = 417100
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3319.805 ; gain = 0.000 ; free physical = 353619 ; free virtual = 416970
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3319.805 ; gain = 392.320 ; free physical = 351039 ; free virtual = 414389
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3321.773 ; gain = 394.289 ; free physical = 351035 ; free virtual = 414386
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3321.773 ; gain = 394.289 ; free physical = 351030 ; free virtual = 414382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3321.773 ; gain = 394.289 ; free physical = 350941 ; free virtual = 414318
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1312 (col length:164)
+BRAMs: 1200 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7129] Port IF_NOC_AXI_RUSER[16] in module bd_e614_M00_AXI_nsu_0_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port S00_INI_internoc[0] in module bd_e614 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3321.773 ; gain = 394.289 ; free physical = 350869 ; free virtual = 414233
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 4357.086 ; gain = 1429.602 ; free physical = 355153 ; free virtual = 418715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 4357.086 ; gain = 1429.602 ; free physical = 355144 ; free virtual = 418705
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11322] No global retiming is needed without any clock constraint
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 4367.102 ; gain = 1439.617 ; free physical = 355109 ; free virtual = 418671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11322] No global retiming is needed without any clock constraint
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 351002 ; free virtual = 414764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 351000 ; free virtual = 414762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 351000 ; free virtual = 414762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 350996 ; free virtual = 414760
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 350995 ; free virtual = 414759
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 350991 ; free virtual = 414755
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |NOC_NSU128 |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 350987 ; free virtual = 414752
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 4553.914 ; gain = 1569.766 ; free physical = 350264 ; free virtual = 414162
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 4553.914 ; gain = 1626.430 ; free physical = 350261 ; free virtual = 414159
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4553.914 ; gain = 0.000 ; free physical = 350196 ; free virtual = 414111
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4553.914 ; gain = 0.000 ; free physical = 348575 ; free virtual = 412578
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 1bc38939
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:23 . Memory (MB): peak = 4553.914 ; gain = 2787.125 ; free physical = 348265 ; free virtual = 412268
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3433.373; main = 3433.373; forked = 174.041
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5119.285; main = 4540.527; forked = 974.711
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/project_1_ConfigNoc_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP project_1_ConfigNoc_0, cache-ID = c393108494f2402c
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_ConfigNoc_0_synth_1/project_1_ConfigNoc_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file project_1_ConfigNoc_0_utilization_synth.rpt -pb project_1_ConfigNoc_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 15 02:38:11 2025...

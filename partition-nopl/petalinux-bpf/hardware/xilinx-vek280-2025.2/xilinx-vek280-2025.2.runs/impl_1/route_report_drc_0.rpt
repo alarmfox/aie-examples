@@ -1,0 +1,56 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sat Nov 15 02:51:57 2025
+| Host         : xcossw07 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_drc -file route_report_drc_0.rpt -pb route_report_drc_0.pb -rpx route_report_drc_0.rpx
+| Design       : project_1_wrapper
+| Device       : xcve2802-vsvh1760-2MP-e-S
+| Speed File   : -2MP
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 1
++-----------+----------+-------------------+--------+
+| Rule      | Severity | Description       | Checks |
++-----------+----------+-------------------+--------+
+| RTSTAT-10 | Warning  | No routable loads | 1      |
++-----------+----------+-------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+RTSTAT-10#1 Warning
+No routable loads  
+4434 net(s) have no routable loads. The problem bus(es) and/or net(s) are project_1_i/CIPS_0/inst/pspmc_0/inst/apu_event_o,
+project_1_i/CIPS_0/inst/pspmc_0/inst/apu_event_standby_wfe[1:0],
+project_1_i/CIPS_0/inst/pspmc_0/inst/apu_event_standby_wfi[1:0],
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_capture,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_drck,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_reset,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_runtest,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_sel,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_shift,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_tck,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_tdi,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_tms,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user1_usr_update,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user2_usr_capture,
+project_1_i/CIPS_0/inst/pspmc_0/inst/bscan_user2_usr_drck
+ (the first 15 of 900 listed nets/buses).
+Related violations: <none>
+
+

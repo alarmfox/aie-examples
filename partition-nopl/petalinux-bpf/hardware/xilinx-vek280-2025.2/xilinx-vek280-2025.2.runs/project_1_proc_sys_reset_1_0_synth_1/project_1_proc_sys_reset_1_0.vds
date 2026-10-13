@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Nov 15 02:38:30 2025
+# Process ID         : 3205651
+# Current directory  : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_proc_sys_reset_1_0_synth_1
+# Command line       : vivado -log project_1_proc_sys_reset_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_1_proc_sys_reset_1_0.tcl
+# Log file           : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_proc_sys_reset_1_0_synth_1/project_1_proc_sys_reset_1_0.vds
+# Journal file       : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_proc_sys_reset_1_0_synth_1/vivado.jou
+# Running On         : xcossw07
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.4 LTS
+# Processor Detail   : AMD EPYC 7302 16-Core Processor
+# CPU Frequency      : 3272.777 MHz
+# CPU Physical cores : 32
+# CPU Logical cores  : 64
+# Host memory        : 540603 MB
+# Swap memory        : 6726 MB
+# Total Virtual      : 547329 MB
+# Available Virtual  : 486981 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+500 Beta devices matching pattern found, 500 enabled.
+enable_beta_device: Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 1672.078 ; gain = 203.691 ; free physical = 404818 ; free virtual = 468847
+source project_1_proc_sys_reset_1_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP project_1_proc_sys_reset_1_0, cache-ID = 242f9e701aabd847.
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 15 02:38:49 2025...

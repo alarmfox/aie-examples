@@ -1,0 +1,522 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Nov 15 02:36:15 2025
+# Process ID         : 3164686
+# Current directory  : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1
+# Command line       : vivado -log project_1_cips_noc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_1_cips_noc_0.tcl
+# Log file           : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/project_1_cips_noc_0.vds
+# Journal file       : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/vivado.jou
+# Running On         : xcossw07
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.4 LTS
+# Processor Detail   : AMD EPYC 7302 16-Core Processor
+# CPU Frequency      : 3290.422 MHz
+# CPU Physical cores : 32
+# CPU Logical cores  : 64
+# Host memory        : 540603 MB
+# Swap memory        : 6726 MB
+# Total Virtual      : 547329 MB
+# Available Virtual  : 469030 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+500 Beta devices matching pattern found, 500 enabled.
+enable_beta_device: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1670.566 ; gain = 136.059 ; free physical = 368880 ; free virtual = 432063
+source project_1_cips_noc_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:00.99 ; elapsed = 00:00:06 . Memory (MB): peak = 1688.379 ; gain = 17.812 ; free physical = 364391 ; free virtual = 427587
+Command: synth_design -top project_1_cips_noc_0 -part xcve2802-vsvh1760-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Device 21-403] Loading part xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3166640
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3184.137 ; gain = 246.625 ; free physical = 351831 ; free virtual = 415065
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'project_1_cips_noc_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/synth/project_1_cips_noc_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:10]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S00_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S00_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S00_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S00_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/hdl/bfm/bd_9aea_S00_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+WARNING: [Synth 8-7023] instance 'S00_AXI_nmu' of module 'bd_9aea_S00_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1809]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S01_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S01_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized0' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized0' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S01_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S01_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/hdl/bfm/bd_9aea_S01_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S01_AXI_nmu_0' is unconnected for instance 'S01_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+WARNING: [Synth 8-7023] instance 'S01_AXI_nmu' of module 'bd_9aea_S01_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1860]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S02_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S02_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized1' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized1' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S02_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S02_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/hdl/bfm/bd_9aea_S02_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S02_AXI_nmu_0' is unconnected for instance 'S02_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+WARNING: [Synth 8-7023] instance 'S02_AXI_nmu' of module 'bd_9aea_S02_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1911]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S03_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S03_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized2' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized2' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S03_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S03_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/hdl/bfm/bd_9aea_S03_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S03_AXI_nmu_0' is unconnected for instance 'S03_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+WARNING: [Synth 8-7023] instance 'S03_AXI_nmu' of module 'bd_9aea_S03_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:1962]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S04_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S04_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized3' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized3' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S04_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S04_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/hdl/bfm/bd_9aea_S04_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S04_AXI_nmu_0' is unconnected for instance 'S04_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+WARNING: [Synth 8-7023] instance 'S04_AXI_nmu' of module 'bd_9aea_S04_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2013]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S05_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S05_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized4' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized4' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S05_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S05_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/hdl/bfm/bd_9aea_S05_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S05_AXI_nmu_0' is unconnected for instance 'S05_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+WARNING: [Synth 8-7023] instance 'S05_AXI_nmu' of module 'bd_9aea_S05_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2064]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S06_AXI_rpu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S06_AXI_rpu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized5' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized5' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0_top.sv:546]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0_top.sv:546]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0_top.sv:546]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S06_AXI_rpu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S06_AXI_rpu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/hdl/bfm/bd_9aea_S06_AXI_rpu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S06_AXI_rpu_0' is unconnected for instance 'S06_AXI_rpu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+WARNING: [Synth 8-7023] instance 'S06_AXI_rpu' of module 'bd_9aea_S06_AXI_rpu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2115]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S07_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S07_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128__parameterized6' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128__parameterized6' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:109390]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0_top.sv:547]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0_top.sv:547]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0_top.sv:547]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S07_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S07_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/hdl/bfm/bd_9aea_S07_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S07_AXI_nmu_0' is unconnected for instance 'S07_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+WARNING: [Synth 8-7023] instance 'S07_AXI_nmu' of module 'bd_9aea_S07_AXI_nmu_0' has 59 connections declared, but only 50 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2166]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S08_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S08_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU512' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU512' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+WARNING: [Synth 8-689] width (128) of port connection 'IF_NOC_AXI_WDATA' does not match port width (512) of module 'NOC_NMU512' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:550]
+WARNING: [Synth 8-689] width (16) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NMU512' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:551]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU512' is unconnected for instance 'NOC_NMU512_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:545]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU512' is unconnected for instance 'NOC_NMU512_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:545]
+WARNING: [Synth 8-7023] instance 'NOC_NMU512_INST' of module 'NOC_NMU512' has 73 connections declared, but only 71 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:545]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S08_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S08_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/hdl/bfm/bd_9aea_S08_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_9aea_S08_AXI_nmu_0' is unconnected for instance 'S08_AXI_nmu' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+WARNING: [Synth 8-7023] instance 'S08_AXI_nmu' of module 'bd_9aea_S08_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2218]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S09_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S09_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU512__parameterized0' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU512__parameterized0' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+WARNING: [Synth 8-689] width (128) of port connection 'IF_NOC_AXI_WDATA' does not match port width (512) of module 'NOC_NMU512__parameterized0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:550]
+WARNING: [Synth 8-689] width (16) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NMU512__parameterized0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:551]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU512' is unconnected for instance 'NOC_NMU512_INST' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:545]
+INFO: [Common 17-14] Message 'Synth 8-7071' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7023] instance 'NOC_NMU512_INST' of module 'NOC_NMU512' has 73 connections declared, but only 71 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:545]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S09_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S09_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/hdl/bfm/bd_9aea_S09_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7023] instance 'S09_AXI_nmu' of module 'bd_9aea_S09_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2269]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S10_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S10_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU512__parameterized1' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU512__parameterized1' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+WARNING: [Synth 8-689] width (128) of port connection 'IF_NOC_AXI_WDATA' does not match port width (512) of module 'NOC_NMU512__parameterized1' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0_top.sv:550]
+WARNING: [Synth 8-689] width (16) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NMU512__parameterized1' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0_top.sv:551]
+WARNING: [Synth 8-7023] instance 'NOC_NMU512_INST' of module 'NOC_NMU512' has 73 connections declared, but only 71 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0_top.sv:545]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S10_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S10_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/hdl/bfm/bd_9aea_S10_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7023] instance 'S10_AXI_nmu' of module 'bd_9aea_S10_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2320]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S11_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S11_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU512__parameterized2' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU512__parameterized2' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+WARNING: [Synth 8-689] width (128) of port connection 'IF_NOC_AXI_WDATA' does not match port width (512) of module 'NOC_NMU512__parameterized2' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0_top.sv:550]
+WARNING: [Synth 8-689] width (16) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NMU512__parameterized2' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0_top.sv:551]
+WARNING: [Synth 8-7023] instance 'NOC_NMU512_INST' of module 'NOC_NMU512' has 73 connections declared, but only 71 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0_top.sv:545]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S11_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S11_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/hdl/bfm/bd_9aea_S11_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7023] instance 'S11_AXI_nmu' of module 'bd_9aea_S11_AXI_nmu_0' has 58 connections declared, but only 49 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2371]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S12_AXI_nmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_S12_AXI_nmu_0_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU512__parameterized3' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU512__parameterized3' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:110078]
+WARNING: [Synth 8-689] width (32) of port connection 'IF_NOC_AXI_WDATA' does not match port width (512) of module 'NOC_NMU512__parameterized3' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0_top.sv:543]
+WARNING: [Synth 8-689] width (4) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NMU512__parameterized3' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0_top.sv:544]
+WARNING: [Synth 8-7023] instance 'NOC_NMU512_INST' of module 'NOC_NMU512' has 73 connections declared, but only 71 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0_top.sv:538]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S12_AXI_nmu_0_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0_top.sv:88]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_S12_AXI_nmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/hdl/bfm/bd_9aea_S12_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7023] instance 'S12_AXI_nmu' of module 'bd_9aea_S12_AXI_nmu_0' has 52 connections declared, but only 43 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:2422]
+INFO: [Synth 8-6157] synthesizing module 'bd_9aea_const_0_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_1/synth/bd_9aea_const_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_10_xlconstant' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/a165/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_10_xlconstant' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/a165/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea_const_0_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_1/synth/bd_9aea_const_0_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_9aea' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_cips_noc_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/synth/project_1_cips_noc_0.v:53]
+WARNING: [Synth 8-3848] Net M00_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:592]
+WARNING: [Synth 8-3848] Net M01_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:593]
+WARNING: [Synth 8-3848] Net M02_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:594]
+WARNING: [Synth 8-3848] Net M03_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:595]
+WARNING: [Synth 8-3848] Net M04_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:596]
+WARNING: [Synth 8-3848] Net M05_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:597]
+WARNING: [Synth 8-3848] Net M06_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:598]
+WARNING: [Synth 8-3848] Net M07_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:599]
+WARNING: [Synth 8-3848] Net M08_INI_internoc in module/entity bd_9aea does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/synth/bd_9aea.v:600]
+INFO: [Synth 8-7129] Port M00_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M01_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M02_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M03_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M04_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M05_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M06_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M07_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M08_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk0 in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk11 in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk9 in module bd_9aea is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3306.105 ; gain = 368.594 ; free physical = 354457 ; free virtual = 417748
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3306.105 ; gain = 368.594 ; free physical = 354423 ; free virtual = 417715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3306.105 ; gain = 368.594 ; free physical = 354423 ; free virtual = 417715
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3306.105 ; gain = 0.000 ; free physical = 353808 ; free virtual = 417132
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0_ooc.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0_ooc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_cips_noc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_cips_noc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/xdc/bd_9aea_S10_AXI_nmu_0.xdc] for cell 'inst/S10_AXI_nmu/bd_9aea_S10_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_0/xdc/bd_9aea_S10_AXI_nmu_0.xdc] for cell 'inst/S10_AXI_nmu/bd_9aea_S10_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/xdc/bd_9aea_S08_AXI_nmu_0.xdc] for cell 'inst/S08_AXI_nmu/bd_9aea_S08_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_2/xdc/bd_9aea_S08_AXI_nmu_0.xdc] for cell 'inst/S08_AXI_nmu/bd_9aea_S08_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/xdc/bd_9aea_S09_AXI_nmu_0.xdc] for cell 'inst/S09_AXI_nmu/bd_9aea_S09_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_3/xdc/bd_9aea_S09_AXI_nmu_0.xdc] for cell 'inst/S09_AXI_nmu/bd_9aea_S09_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/xdc/bd_9aea_S07_AXI_nmu_0.xdc] for cell 'inst/S07_AXI_nmu/bd_9aea_S07_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_4/xdc/bd_9aea_S07_AXI_nmu_0.xdc] for cell 'inst/S07_AXI_nmu/bd_9aea_S07_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/xdc/bd_9aea_S04_AXI_nmu_0.xdc] for cell 'inst/S04_AXI_nmu/bd_9aea_S04_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_5/xdc/bd_9aea_S04_AXI_nmu_0.xdc] for cell 'inst/S04_AXI_nmu/bd_9aea_S04_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/xdc/bd_9aea_S03_AXI_nmu_0.xdc] for cell 'inst/S03_AXI_nmu/bd_9aea_S03_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_6/xdc/bd_9aea_S03_AXI_nmu_0.xdc] for cell 'inst/S03_AXI_nmu/bd_9aea_S03_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/xdc/bd_9aea_S06_AXI_rpu_0.xdc] for cell 'inst/S06_AXI_rpu/bd_9aea_S06_AXI_rpu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_7/xdc/bd_9aea_S06_AXI_rpu_0.xdc] for cell 'inst/S06_AXI_rpu/bd_9aea_S06_AXI_rpu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/xdc/bd_9aea_S02_AXI_nmu_0.xdc] for cell 'inst/S02_AXI_nmu/bd_9aea_S02_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_8/xdc/bd_9aea_S02_AXI_nmu_0.xdc] for cell 'inst/S02_AXI_nmu/bd_9aea_S02_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/xdc/bd_9aea_S12_AXI_nmu_0.xdc] for cell 'inst/S12_AXI_nmu/bd_9aea_S12_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_9/xdc/bd_9aea_S12_AXI_nmu_0.xdc] for cell 'inst/S12_AXI_nmu/bd_9aea_S12_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/xdc/bd_9aea_S11_AXI_nmu_0.xdc] for cell 'inst/S11_AXI_nmu/bd_9aea_S11_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_10/xdc/bd_9aea_S11_AXI_nmu_0.xdc] for cell 'inst/S11_AXI_nmu/bd_9aea_S11_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/xdc/bd_9aea_S05_AXI_nmu_0.xdc] for cell 'inst/S05_AXI_nmu/bd_9aea_S05_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_11/xdc/bd_9aea_S05_AXI_nmu_0.xdc] for cell 'inst/S05_AXI_nmu/bd_9aea_S05_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/xdc/bd_9aea_S01_AXI_nmu_0.xdc] for cell 'inst/S01_AXI_nmu/bd_9aea_S01_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_12/xdc/bd_9aea_S01_AXI_nmu_0.xdc] for cell 'inst/S01_AXI_nmu/bd_9aea_S01_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/xdc/bd_9aea_S00_AXI_nmu_0.xdc] for cell 'inst/S00_AXI_nmu/bd_9aea_S00_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/bd_0/ip/ip_13/xdc/bd_9aea_S00_AXI_nmu_0.xdc] for cell 'inst/S00_AXI_nmu/bd_9aea_S00_AXI_nmu_0_top_INST'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0_board.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0_board.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_cips_noc_0/project_1_cips_noc_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_cips_noc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_cips_noc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_cips_noc_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_cips_noc_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3398.992 ; gain = 0.000 ; free physical = 350909 ; free virtual = 414246
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3399.027 ; gain = 0.000 ; free physical = 350757 ; free virtual = 414095
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3399.027 ; gain = 461.516 ; free physical = 349955 ; free virtual = 413328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3400.996 ; gain = 463.484 ; free physical = 349945 ; free virtual = 413318
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3400.996 ; gain = 463.484 ; free physical = 349899 ; free virtual = 413272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3400.996 ; gain = 463.484 ; free physical = 350632 ; free virtual = 414011
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1312 (col length:164)
+BRAMs: 1200 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7129] Port M00_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M01_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M02_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M03_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M04_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M05_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M06_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M07_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port M08_INI_internoc[0] in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk0 in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk11 in module bd_9aea is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk9 in module bd_9aea is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3400.996 ; gain = 463.484 ; free physical = 352010 ; free virtual = 415414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4440.863 ; gain = 1503.352 ; free physical = 349979 ; free virtual = 413990
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 4446.863 ; gain = 1509.352 ; free physical = 349909 ; free virtual = 413933
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11322] No global retiming is needed without any clock constraint
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 4461.520 ; gain = 1524.008 ; free physical = 349804 ; free virtual = 413806
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11322] No global retiming is needed without any clock constraint
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347267 ; free virtual = 411270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347265 ; free virtual = 411268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347227 ; free virtual = 411230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347223 ; free virtual = 411226
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347217 ; free virtual = 411220
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347203 ; free virtual = 411206
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |NOC_NMU128 |     8|
+|2     |NOC_NMU512 |     5|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 347202 ; free virtual = 411205
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 4640.332 ; gain = 1609.898 ; free physical = 346693 ; free virtual = 410697
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 4640.332 ; gain = 1702.820 ; free physical = 346691 ; free virtual = 410695
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 4640.332 ; gain = 0.000 ; free physical = 345738 ; free virtual = 409739
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4640.332 ; gain = 0.000 ; free physical = 349409 ; free virtual = 413413
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e43cc586
+INFO: [Common 17-83] Releasing license: Synthesis
+138 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:29 . Memory (MB): peak = 4640.332 ; gain = 2872.797 ; free physical = 349415 ; free virtual = 413419
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3571.171; main = 3528.765; forked = 174.653
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5464.234; main = 4626.945; forked = 974.711
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/project_1_cips_noc_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP project_1_cips_noc_0, cache-ID = 6b6eb54b0139025a
+INFO: [Coretcl 2-1174] Renamed 28 cell refs.
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_cips_noc_0_synth_1/project_1_cips_noc_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file project_1_cips_noc_0_utilization_synth.rpt -pb project_1_cips_noc_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 15 02:38:23 2025...

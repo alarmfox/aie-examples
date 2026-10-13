@@ -1,0 +1,45 @@
+# 1.Wait for power supply status to be 1
+mask_poll 0xf6870008 0x00040000 0x1 0x1000
+#unlock NPI register
+write 0xf687000c 0xf9e8d7c6
+# 2.Release Internal Power On Reset (IPOR)
+write 0xf6870000 0x04000000
+write 0xf6870004 0x00000000
+# 3.Release DFX Isolation gasket (ISO2)
+write 0xf6870000 0x00400000
+write 0xf6870004 0x00000000
+# 4.Assert scan clear trigger
+write 0xf6870000 0x00000800
+write 0xf6870004 0x00000800
+# 5.Poll for scan clear done and scan clear pass
+mask_poll 0xf6870008 0x00000001 0x1 0x1000
+mask_poll 0xf6870008 0x00000002 0x1 0x1000
+# Deassert scan clear trigger
+write 0xf6870004 0x00000000
+# 6.Load BISR cache with efuse repair data
+# 7.Assert BISR Trigger
+write 0xf6870000 0x02000000
+write 0xf6870004 0x02000000
+# 8.Poll for BISR done and BISR pass
+mask_poll 0xf6870008 0x00010000 0x1 0x1000
+mask_poll 0xf6870008 0x00020000 0x1 0x1000
+# Deassert BISR trigger
+write 0xf6870004 0x00000000
+# 9.Assert Memclear trigger
+write 0xf6870000 0x00040000
+write 0xf6870004 0x00040000
+# 10.Poll for Memclear done and memclear pass
+mask_poll 0xf6870008 0x00000040 0x1 0x1000
+mask_poll 0xf6870008 0x00000080 0x1 0x1000
+# Deassert memclear trigger
+write 0xf6870004 0x00000000
+# 11.Poll for efuse disable status
+mask_poll 0xf6870008 0x00080000 0x0 0x1000
+# 12.Release isolation gasket (ISO1)
+write 0xf6870000 0x00200000
+write 0xf6870004 0x00000000
+# 13.Release initstate
+write 0xf6870000 0x00000040
+write 0xf6870004 0x00000000
+# Lock NPI registers
+write 0xf687000c 0xf9e8d7c3

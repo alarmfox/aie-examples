@@ -1,0 +1,20 @@
+#Note: Mention Each package in individual line
+#These packages will get added into rootfs menu entry
+
+CONFIG_gpio-demo
+CONFIG_peekpoke
+CONFIG_packagegroup-xilinx-jupyter
+CONFIG_python3-ipywidgets
+CONFIG_pm-notebooks
+CONFIG_packagegroup-xilinx-gstreamer
+CONFIG_libvdu-omxil
+CONFIG_vdu-ctrlsw
+CONFIG_libvdu-ctrlsw
+CONFIG_kernel-module-vdu
+CONFIG_vdu-firmware
+CONFIG_gstreamer-vdu-examples
+CONFIG_gstreamer-vdu-notebooks
+CONFIG_openamp-demo-notebooks
+CONFIG_aie-oob
+CONFIG_aie-notebooks
+CONFIG_bpftool

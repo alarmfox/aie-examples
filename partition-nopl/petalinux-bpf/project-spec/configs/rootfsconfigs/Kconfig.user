@@ -1,0 +1,70 @@
+menu "user packages " 
+config libvdu-ctrlsw  
+	 bool "libvdu-ctrlsw"
+	 help
+	
+config libvdu-omxil  
+	 bool "libvdu-omxil"
+	 help
+	
+config aie-notebooks  
+	 bool "aie-notebooks"
+	 help
+	
+config aie-oob  
+	 bool "aie-oob"
+	 help
+	
+config bpftool  
+	 bool "bpftool"
+	 help
+	
+config gpio-demo  
+	 bool "gpio-demo"
+	 help
+	
+config gstreamer-vdu-examples  
+	 bool "gstreamer-vdu-examples"
+	 help
+	
+config gstreamer-vdu-notebooks  
+	 bool "gstreamer-vdu-notebooks"
+	 help
+	
+config kernel-module-vdu  
+	 bool "kernel-module-vdu"
+	 help
+	
+config openamp-demo-notebooks  
+	 bool "openamp-demo-notebooks"
+	 help
+	
+config packagegroup-xilinx-gstreamer  
+	 bool "packagegroup-xilinx-gstreamer"
+	 help
+	
+config packagegroup-xilinx-jupyter  
+	 bool "packagegroup-xilinx-jupyter"
+	 help
+	
+config peekpoke  
+	 bool "peekpoke"
+	 help
+	
+config pm-notebooks  
+	 bool "pm-notebooks"
+	 help
+	
+config python3-ipywidgets  
+	 bool "python3-ipywidgets"
+	 help
+	
+config vdu-ctrlsw  
+	 bool "vdu-ctrlsw"
+	 help
+	
+config vdu-firmware  
+	 bool "vdu-firmware"
+	 help
+	
+endmenu

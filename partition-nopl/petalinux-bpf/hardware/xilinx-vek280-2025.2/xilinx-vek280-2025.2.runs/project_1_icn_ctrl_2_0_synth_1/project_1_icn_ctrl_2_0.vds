@@ -1,0 +1,927 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Nov 15 02:36:15 2025
+# Process ID         : 3164702
+# Current directory  : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1
+# Command line       : vivado -log project_1_icn_ctrl_2_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_1_icn_ctrl_2_0.tcl
+# Log file           : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/project_1_icn_ctrl_2_0.vds
+# Journal file       : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/vivado.jou
+# Running On         : xcossw07
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.4 LTS
+# Processor Detail   : AMD EPYC 7302 16-Core Processor
+# CPU Frequency      : 2994.584 MHz
+# CPU Physical cores : 32
+# CPU Logical cores  : 64
+# Host memory        : 540603 MB
+# Swap memory        : 6726 MB
+# Total Virtual      : 547329 MB
+# Available Virtual  : 469451 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+500 Beta devices matching pattern found, 500 enabled.
+enable_beta_device: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 1671.422 ; gain = 136.059 ; free physical = 368566 ; free virtual = 431749
+source project_1_icn_ctrl_2_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1692.234 ; gain = 20.812 ; free physical = 364552 ; free virtual = 427747
+Command: synth_design -top project_1_icn_ctrl_2_0 -part xcve2802-vsvh1760-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Device 21-403] Loading part xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3167065
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3182.961 ; gain = 242.688 ; free physical = 352751 ; free virtual = 415991
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'project_1_icn_ctrl_2_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/synth/project_1_icn_ctrl_2_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:10]
+INFO: [Synth 8-6157] synthesizing module 'clk_map_imp_1N0W7K2' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:740]
+INFO: [Synth 8-638] synthesizing module 'bd_422d_psr_aclk_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_1/synth/bd_422d_psr_aclk_0.vhd:74]
+	Parameter C_FAMILY bound to: versal - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 1 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1243' bound to instance 'U0' of component 'proc_sys_reset' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_1/synth/bd_422d_psr_aclk_0.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1302]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1371]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1387]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1413]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1436]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1460]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318' bound to instance 'POR_SRL_I' of component 'SRL16' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:873]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165318]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'ACT_LO_EXT' of component 'xpm_cdc_single' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:968]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'ACT_LO_AUX' of component 'xpm_cdc_single' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1015]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1302]
+INFO: [Synth 8-256] done synthesizing module 'bd_422d_psr_aclk_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_1/synth/bd_422d_psr_aclk_0.vhd:74]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'bd_422d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:771]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'bd_422d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:771]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'bd_422d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:771]
+WARNING: [Synth 8-7071] port 'peripheral_aresetn' of module 'bd_422d_psr_aclk_0' is unconnected for instance 'psr_aclk' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:771]
+WARNING: [Synth 8-7023] instance 'psr_aclk' of module 'bd_422d_psr_aclk_0' has 10 connections declared, but only 6 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:771]
+INFO: [Synth 8-6155] done synthesizing module 'clk_map_imp_1N0W7K2' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:740]
+INFO: [Synth 8-6157] synthesizing module 'm00_exit_pipeline_imp_C8CFIX' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:780]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_m00e_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_12/synth/bd_422d_m00e_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_m00e_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_12/synth/bd_422d_m00e_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm00_exit_pipeline_imp_C8CFIX' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:780]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_m00s2a_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_11/synth/bd_422d_m00s2a_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_m00s2a_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_11/synth/bd_422d_m00s2a_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_s00a2s_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_5/synth/bd_422d_s00a2s_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_s00a2s_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_5/synth/bd_422d_s00a2s_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 's00_entry_pipeline_imp_1CMDUHM' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1086]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_s00mmu_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_2/synth/bd_422d_s00mmu_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_s00mmu_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_2/synth/bd_422d_s00mmu_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_s00sic_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_4/synth/bd_422d_s00sic_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_s00sic_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_4/synth/bd_422d_s00sic_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_s00tr_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_3/synth/bd_422d_s00tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_s00tr_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_3/synth/bd_422d_s00tr_0.sv:53]
+WARNING: [Synth 8-7071] port 'm_axi_awburst' of module 'bd_422d_s00tr_0' is unconnected for instance 's00_transaction_regulator' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1585]
+WARNING: [Synth 8-7071] port 'm_axi_arburst' of module 'bd_422d_s00tr_0' is unconnected for instance 's00_transaction_regulator' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1585]
+WARNING: [Synth 8-7023] instance 's00_transaction_regulator' of module 'bd_422d_s00tr_0' has 86 connections declared, but only 84 given [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1585]
+INFO: [Synth 8-6155] done synthesizing module 's00_entry_pipeline_imp_1CMDUHM' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1086]
+INFO: [Synth 8-6157] synthesizing module 's00_nodes_imp_1FR3MO0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1672]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_sarn_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_6/synth/bd_422d_sarn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized0' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized0' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_sarn_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_6/synth/bd_422d_sarn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_sawn_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_8/synth/bd_422d_sawn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_sawn_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_8/synth/bd_422d_sawn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_sbn_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_10/synth/bd_422d_sbn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized1' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized1' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized1' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized1' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_sbn_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_10/synth/bd_422d_sbn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_srn_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_7/synth/bd_422d_srn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized2' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized2' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized2' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized2' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_srn_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_7/synth/bd_422d_srn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_422d_swn_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_9/synth/bd_422d_swn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_sdpram__parameterized3' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized3' [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized3' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_sdpram__parameterized3' (0#1) [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8996]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d_swn_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_9/synth/bd_422d_swn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's00_nodes_imp_1FR3MO0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:1672]
+INFO: [Synth 8-6155] done synthesizing module 'bd_422d' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_icn_ctrl_2_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/synth/project_1_icn_ctrl_2_0.v:53]
+WARNING: [Synth 8-3848] Net aresetn_out in module/entity clk_map_imp_1N0W7K2 does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/synth/bd_422d.v:756]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-7129] Port din[0] in module sc_util_v1_0_4_onehot_to_binary is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port sleep in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rsta in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port regcea in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port injectsbiterra in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port injectdbiterra in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkb in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port regceb in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port web[0] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[178] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[177] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[176] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[175] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[174] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[173] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[172] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[171] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[170] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[169] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[168] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[167] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[166] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[165] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[164] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[163] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[162] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[161] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[160] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[159] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[158] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[157] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[156] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[155] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[154] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[153] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[152] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[151] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[150] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[149] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[148] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[147] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[146] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[145] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[144] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[143] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[142] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[141] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[140] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[139] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[138] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[137] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[136] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[135] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[134] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[133] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[132] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[131] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[130] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[129] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[128] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[127] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[126] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[125] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[124] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[123] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[122] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[121] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[120] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[119] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[118] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[117] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[116] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[115] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[114] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[113] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[112] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[111] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[110] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[109] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[108] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[107] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[106] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[105] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[104] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[103] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[102] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[101] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[100] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[99] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[98] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[97] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[96] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[95] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[94] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[93] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[92] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port dinb[91] in module xpm_memory_base__parameterized3 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3382.500 ; gain = 442.227 ; free physical = 352420 ; free virtual = 415752
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3382.500 ; gain = 442.227 ; free physical = 352371 ; free virtual = 415702
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3382.500 ; gain = 442.227 ; free physical = 352371 ; free virtual = 415702
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.73 . Memory (MB): peak = 3382.500 ; gain = 0.000 ; free physical = 350863 ; free virtual = 414227
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/ooc.xdc] for cell 'inst'
+create_clock: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3798.395 ; gain = 114.562 ; free physical = 359876 ; free virtual = 423434
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/ooc.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_1/bd_422d_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/bd_0/ip/ip_1/bd_422d_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/smartconnect.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_icn_ctrl_2_0/smartconnect.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_icn_ctrl_2_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_icn_ctrl_2_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/proj/xbuilds/SWIP/2025.2_1114_2157/installs/lin64/2025.2/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_icn_ctrl_2_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_icn_ctrl_2_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 23 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3808.301 ; gain = 0.000 ; free physical = 359602 ; free virtual = 423160
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3808.336 ; gain = 0.000 ; free physical = 359251 ; free virtual = 422809
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 3808.336 ; gain = 868.062 ; free physical = 352141 ; free virtual = 415786
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 3810.305 ; gain = 870.031 ; free physical = 352145 ; free virtual = 415781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 3810.305 ; gain = 870.031 ; free physical = 352105 ; free virtual = 415748
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 3810.305 ; gain = 870.031 ; free physical = 350261 ; free virtual = 414160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1312 (col length:164)
+BRAMs: 1200 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/FDRE_inst) is unused and will be removed from module bd_422d.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/BSR_OUT_DFF[0].FDRE_BSR) is unused and will be removed from module bd_422d.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module bd_422d.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N) is unused and will be removed from module bd_422d.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 3810.305 ; gain = 870.031 ; free physical = 344853 ; free virtual = 408853
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 4491.688 ; gain = 1551.414 ; free physical = 402882 ; free virtual = 466885
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 4524.719 ; gain = 1584.445 ; free physical = 401901 ; free virtual = 465904
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_18_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_18_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_11_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_11_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_11_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_11_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_mmu_v1_0_16_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 1, and local backward move = 0
+
+	Retimed registers names:
+		inst/s00_entry_pipeline/s00_mmu/inst/areset_reg_fret
+		inst/s00_entry_pipeline/s00_mmu/inst/areset_reg_fret__0
+		inst/s00_entry_pipeline/s00_mmu/inst/areset_reg_fret__1
+ 
+
+INFO: [Synth 8-5816] Retiming module `sc_mmu_v1_0_16_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__3`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__3' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_si_converter_v1_0_16_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_si_converter_v1_0_16_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__4`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__4' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_transaction_regulator_v1_0_12_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_transaction_regulator_v1_0_12_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized0__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized0__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized0__1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized0__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__5`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__5' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__6`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__6' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized0`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized0' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized0`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized0' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__7`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__7' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__8`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__8' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized0`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized0' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__9`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__9' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__10`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__10' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized1`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized2`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized2' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized2`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized2' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__11`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__11' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__12`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__12' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized2`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized2' done
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized3`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_base__parameterized3' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized3`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_memory_sdpram__parameterized3' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__13`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__13' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized3`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.552 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_19_top__parameterized3' done
+
+
+INFO: [Synth 8-5816] Retiming module `bd_422d`
+   Worst Slack before retiming is 7.552 ns and worst slack after retiming is 7.788 ns
+   Numbers of local forward move = 0, and local backward move = 1
+
+	Retimed registers names:
+		inst/clk_map/psr_aclk/U0/EXT_LPF/lpf_int_reg_bret
+		inst/clk_map/psr_aclk/U0/EXT_LPF/lpf_int_reg_bret__0
+		inst/clk_map/psr_aclk/U0/EXT_LPF/lpf_int_reg_bret__1
+ 
+
+INFO: [Synth 8-5816] Retiming module `bd_422d' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `project_1_icn_ctrl_2_0`
+   Worst Slack before retiming is 7.788 ns and worst slack after retiming is 7.788 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_icn_ctrl_2_0' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 4540.734 ; gain = 1600.461 ; free physical = 401854 ; free virtual = 465863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single__1`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single__1' done
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_single' done
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_18_top`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_18_top' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_11_top`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_11_top' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_11_top`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_11_top' done
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2`
+   Worst Slack before retiming is 7.794 ns and worst slack after retiming is 7.794 ns
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2' done
+
+
+INFO: [Common 17-14] Message 'Synth 8-5816' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401485 ; free virtual = 465510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401485 ; free virtual = 465509
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401643 ; free virtual = 465667
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401643 ; free virtual = 465667
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401644 ; free virtual = 465672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401644 ; free virtual = 465673
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |    71|
+|2     |LUT2     |    73|
+|3     |LUT3     |   716|
+|4     |LUT4     |   114|
+|5     |LUT5     |    75|
+|6     |LUT6     |   103|
+|8     |RAM32M   |     2|
+|9     |RAM32M16 |    45|
+|10    |SRL16    |     1|
+|11    |SRL16E   |    16|
+|12    |FDCE     |    42|
+|13    |FDRE     |  2191|
+|14    |FDSE     |    58|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401644 ; free virtual = 465673
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 4697.547 ; gain = 1331.438 ; free physical = 401531 ; free virtual = 465548
+Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 4697.547 ; gain = 1757.273 ; free physical = 401530 ; free virtual = 465547
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 4697.547 ; gain = 0.000 ; free physical = 404765 ; free virtual = 468794
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4698.184 ; gain = 0.000 ; free physical = 404659 ; free virtual = 468684
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 49 instances were transformed.
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 45 instances
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: 99520543
+INFO: [Common 17-83] Releasing license: Synthesis
+352 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:04 . Memory (MB): peak = 4698.219 ; gain = 2932.766 ; free physical = 407776 ; free virtual = 471801
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3653.464; main = 3619.261; forked = 184.796
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5515.449; main = 4698.188; forked = 974.711
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 4704.195 ; gain = 0.000 ; free physical = 407777 ; free virtual = 471806
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/project_1_icn_ctrl_2_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP project_1_icn_ctrl_2_0, cache-ID = 12a53606e52eeae1
+INFO: [Coretcl 2-1174] Renamed 129 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4704.195 ; gain = 0.000 ; free physical = 410615 ; free virtual = 474662
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_icn_ctrl_2_0_synth_1/project_1_icn_ctrl_2_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file project_1_icn_ctrl_2_0_utilization_synth.rpt -pb project_1_icn_ctrl_2_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 15 02:38:56 2025...

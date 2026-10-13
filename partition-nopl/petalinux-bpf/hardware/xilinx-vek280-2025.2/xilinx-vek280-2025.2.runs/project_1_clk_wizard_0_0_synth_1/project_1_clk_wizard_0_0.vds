@@ -1,0 +1,442 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Nov 15 02:36:15 2025
+# Process ID         : 3164689
+# Current directory  : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1
+# Command line       : vivado -log project_1_clk_wizard_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_1_clk_wizard_0_0.tcl
+# Log file           : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/project_1_clk_wizard_0_0.vds
+# Journal file       : /tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/vivado.jou
+# Running On         : xcossw07
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.4 LTS
+# Processor Detail   : AMD EPYC 7302 16-Core Processor
+# CPU Frequency      : 2994.584 MHz
+# CPU Physical cores : 32
+# CPU Logical cores  : 64
+# Host memory        : 540603 MB
+# Swap memory        : 6726 MB
+# Total Virtual      : 547329 MB
+# Available Virtual  : 470502 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+500 Beta devices matching pattern found, 500 enabled.
+enable_beta_device: Time (s): cpu = 00:00:21 ; elapsed = 00:00:15 . Memory (MB): peak = 1672.621 ; gain = 203.691 ; free physical = 366162 ; free virtual = 429348
+source project_1_clk_wizard_0_0.tcl -notrace
+Command: synth_design -top project_1_clk_wizard_0_0 -part xcve2802-vsvh1760-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcve2802'
+INFO: [Device 21-403] Loading part xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3167291
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3166.652 ; gain = 245.688 ; free physical = 352423 ; free virtual = 415704
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11065] parameter 'DCO_DCLK_DIV' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:52]
+WARNING: [Synth 8-11065] parameter 'DCNT_B' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:54]
+WARNING: [Synth 8-11065] parameter 'DCO_CODE_INIT' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:56]
+WARNING: [Synth 8-11065] parameter 'DCO_CODE_FINAL' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:57]
+WARNING: [Synth 8-11065] parameter 'BCODE_B' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:58]
+WARNING: [Synth 8-11065] parameter 'T_RST' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:60]
+WARNING: [Synth 8-11065] parameter 'T1_RST' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:61]
+WARNING: [Synth 8-11065] parameter 'RCNT_B' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:62]
+WARNING: [Synth 8-11065] parameter 'T_DCO' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:66]
+WARNING: [Synth 8-11065] parameter 'T_DCO_SYN' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:70]
+WARNING: [Synth 8-11065] parameter 'T_CAL_STEP' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:74]
+WARNING: [Synth 8-11065] parameter 'SESSION_END' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:76]
+WARNING: [Synth 8-11065] parameter 'S_RST' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:80]
+WARNING: [Synth 8-11065] parameter 'S_1' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:81]
+WARNING: [Synth 8-11065] parameter 'S_2' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:82]
+WARNING: [Synth 8-11065] parameter 'S_3' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:83]
+WARNING: [Synth 8-11065] parameter 'S_4' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:84]
+WARNING: [Synth 8-11065] parameter 'S_5' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:85]
+WARNING: [Synth 8-11065] parameter 'S_6' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:86]
+WARNING: [Synth 8-11065] parameter 'S_7' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:87]
+WARNING: [Synth 8-11065] parameter 'S_8' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:88]
+WARNING: [Synth 8-11065] parameter 'S_9' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:89]
+WARNING: [Synth 8-11065] parameter 'S_10' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:90]
+WARNING: [Synth 8-11065] parameter 'S_11' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:91]
+WARNING: [Synth 8-11065] parameter 'S_12' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:92]
+WARNING: [Synth 8-11065] parameter 'S_13' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:93]
+WARNING: [Synth 8-11065] parameter 'S_14' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:94]
+WARNING: [Synth 8-11065] parameter 'S_15' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:95]
+WARNING: [Synth 8-11065] parameter 'S_FINISH' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:96]
+WARNING: [Synth 8-11065] parameter 'DONT_CARE_STATE' becomes localparam in 'project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal' with formal parameter declaration list [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_cmt_dpll_fd_cal.sv:97]
+INFO: [Synth 8-6157] synthesizing module 'project_1_clk_wizard_0_0' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/synth/project_1_clk_wizard_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'project_1_clk_wizard_0_0_clk_wiz_top' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:47]
+INFO: [Synth 8-6157] synthesizing module 'project_1_clk_wizard_0_0_clocking_structure' [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_structure.v:47]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82804]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:82804]
+INFO: [Synth 8-6157] synthesizing module 'MMCME5' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:96439]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME5' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:96439]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/proj/xbuilds/2025.2_1115_1/installs/lin64/2025.2/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_clk_wizard_0_0_clocking_structure' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clocking_structure.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_clk_wizard_0_0_clk_wiz_top' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'project_1_clk_wizard_0_0' (0#1) [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/synth/project_1_clk_wizard_0_0.v:53]
+WARNING: [Synth 8-3848] Net s_axi_awready in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:343]
+WARNING: [Synth 8-3848] Net s_axi_wready in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:344]
+WARNING: [Synth 8-3848] Net s_axi_bresp in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:345]
+WARNING: [Synth 8-3848] Net s_axi_bvalid in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:346]
+WARNING: [Synth 8-3848] Net s_axi_arready in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:347]
+WARNING: [Synth 8-3848] Net s_axi_rdata in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:348]
+WARNING: [Synth 8-3848] Net s_axi_rresp in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:349]
+WARNING: [Synth 8-3848] Net s_axi_rvalid in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:350]
+WARNING: [Synth 8-3848] Net clk_stop in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:379]
+WARNING: [Synth 8-3848] Net clk_glitch in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:380]
+WARNING: [Synth 8-3848] Net clk_oor in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:381]
+WARNING: [Synth 8-3848] Net interrupt in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:382]
+WARNING: [Synth 8-3848] Net locked_fb in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:409]
+WARNING: [Synth 8-3848] Net clkfb_out_p in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:414]
+WARNING: [Synth 8-3848] Net clkfb_out_n in module/entity project_1_clk_wizard_0_0_clk_wiz_top does not have driver. [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_clk_wiz_top.v:415]
+INFO: [Synth 8-7129] Port clkin1_deskew in module project_1_clk_wizard_0_0_clocking_structure is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkin2_deskew in module project_1_clk_wizard_0_0_clocking_structure is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkfb1_deskew in module project_1_clk_wizard_0_0_clocking_structure is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkfb2_deskew in module project_1_clk_wizard_0_0_clocking_structure is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awready in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wready in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_bresp[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_bresp[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_bvalid in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_arready in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[31] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[30] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[29] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[28] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[27] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[26] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[25] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[24] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[23] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[22] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[21] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[20] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[19] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[18] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[17] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[16] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[15] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[14] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[13] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[12] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[11] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[10] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[9] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[8] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[7] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[6] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[5] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[4] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[3] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[2] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rdata[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rresp[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rresp[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_rvalid in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_stop[3] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_stop[2] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_stop[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_stop[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_glitch[3] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_glitch[2] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_glitch[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_glitch[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_oor[3] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_oor[2] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_oor[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clk_oor[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port locked_fb in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkfb_out_p in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port clkfb_out_n in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_aclk in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_aresetn in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[10] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[9] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[8] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[7] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[6] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[5] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[4] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[3] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[2] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[1] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awaddr[0] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_awvalid in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[31] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[30] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[29] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[28] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[27] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[26] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[25] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[24] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[23] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[22] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[21] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[20] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[19] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[18] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[17] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[16] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[15] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[14] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[13] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[12] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[11] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[10] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[9] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[8] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wdata[7] in module project_1_clk_wizard_0_0_clk_wiz_top is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3257.590 ; gain = 336.625 ; free physical = 354010 ; free virtual = 417355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3257.590 ; gain = 336.625 ; free physical = 353995 ; free virtual = 417341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3257.590 ; gain = 336.625 ; free physical = 353995 ; free virtual = 417340
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3265.590 ; gain = 0.000 ; free physical = 353810 ; free virtual = 417166
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_board.xdc] for cell 'inst'
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0_board.xdc] for cell 'inst'
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0.xdc] for cell 'inst'
+create_clock: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3441.719 ; gain = 103.594 ; free physical = 351659 ; free virtual = 415064
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.gen/sources_1/bd/project_1/ip/project_1_clk_wizard_0_0/project_1_clk_wizard_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/project_1_clk_wizard_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/project_1_clk_wizard_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3447.656 ; gain = 0.000 ; free physical = 351628 ; free virtual = 415033
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  BUFG => BUFGCE: 8 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3447.691 ; gain = 0.000 ; free physical = 351600 ; free virtual = 415006
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 3447.691 ; gain = 526.727 ; free physical = 362210 ; free virtual = 425712
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcve2802-vsvh1760-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 3449.660 ; gain = 528.695 ; free physical = 362212 ; free virtual = 425714
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 3449.660 ; gain = 528.695 ; free physical = 362199 ; free virtual = 425701
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 3449.660 ; gain = 528.695 ; free physical = 362086 ; free virtual = 425640
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1312 (col length:164)
+BRAMs: 1200 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3449.660 ; gain = 528.695 ; free physical = 361444 ; free virtual = 425000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 4369.230 ; gain = 1448.266 ; free physical = 347002 ; free virtual = 411006
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 4369.230 ; gain = 1448.266 ; free physical = 346998 ; free virtual = 411001
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0_clk_wiz_top`
+   Worst Slack before retiming is invalid and worst slack after retiming is invalid
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0_clk_wiz_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0`
+   Worst Slack before retiming is invalid and worst slack after retiming is invalid
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 4378.246 ; gain = 1457.281 ; free physical = 346971 ; free virtual = 410975
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0_clk_wiz_top`
+   Worst Slack before retiming is invalid and worst slack after retiming is invalid
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0_clk_wiz_top' done
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0`
+   Worst Slack before retiming is invalid and worst slack after retiming is invalid
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `project_1_clk_wizard_0_0' done
+
+
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349691 ; free virtual = 413697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349690 ; free virtual = 413695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349690 ; free virtual = 413695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349690 ; free virtual = 413695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349689 ; free virtual = 413694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349689 ; free virtual = 413694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     8|
+|2     |LUT1   |     1|
+|3     |MMCME5 |     1|
+|4     |IBUF   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 349687 ; free virtual = 413693
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 4565.059 ; gain = 1453.992 ; free physical = 350049 ; free virtual = 414055
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 4565.059 ; gain = 1644.094 ; free physical = 350036 ; free virtual = 414042
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4565.059 ; gain = 0.000 ; free physical = 350028 ; free virtual = 414034
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6358] GCLK_DESKEW_DEFAULT not specified in Clock Expansion Window constraints config file for device xcve2802.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Device 21-9335] Optimized delay calculation is enabled for this device.
+INFO: [Constraints 18-13227] Created floorplan with Advanced Flow Feature Set
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4565.059 ; gain = 0.000 ; free physical = 349810 ; free virtual = 413821
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  BUFG => BUFGCE: 8 instances
+
+Synth Design complete | Checksum: 48e89ca7
+INFO: [Common 17-83] Releasing license: Synthesis
+151 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 4565.059 ; gain = 2798.109 ; free physical = 349838 ; free virtual = 413882
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3451.176; main = 3451.176; forked = 174.713
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5113.430; main = 4551.672; forked = 974.711
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4565.059 ; gain = 0.000 ; free physical = 349699 ; free virtual = 413751
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/project_1_clk_wizard_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP project_1_clk_wizard_0_0, cache-ID = a1997ff0885c19ea
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4565.059 ; gain = 0.000 ; free physical = 349322 ; free virtual = 413383
+INFO: [Common 17-1381] The checkpoint '/tmp/tmp.zsgmUDMpZs/temp/hwflow/hwflow_project_1/project_1.runs/project_1_clk_wizard_0_0_synth_1/project_1_clk_wizard_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file project_1_clk_wizard_0_0_utilization_synth.rpt -pb project_1_clk_wizard_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 15 02:38:26 2025...
