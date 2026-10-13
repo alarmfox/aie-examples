@@ -9,8 +9,8 @@
  *
  *     ./host <xclbin>,<graph> [<xclbin>,<graph> ...]
  *
- *     ./host pr0.xclbin,pr0_gr pr1.xclbin,pr1_gr   different partitions
- *     ./host pr0.xclbin,pr0_gr pr0.xclbin,pr0_gr   same partition
+ *     ./host pr0.xclbin,gr pr1.xclbin,gr   different partitions
+ *     ./host pr0.xclbin,gr pr0.xclbin,gr   same partition
  */
 
 #include <cstdint>
