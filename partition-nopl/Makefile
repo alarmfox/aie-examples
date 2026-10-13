@@ -7,7 +7,7 @@ PARTITIONS := pr0 pr1
 LIBADFS := pr0/libadf_0_$(AIE_TARGET).a pr1/libadf_1_$(AIE_TARGET).a
 XCLBINS := pr0/pr0.xclbin pr1/pr1.xclbin
 HOST    := ps/host.exe
-XSA     := platform.xsa
+XSA     := platform_$(TARGET).xsa
 
 SD_FILES := $(HOST) $(XCLBINS)
 
