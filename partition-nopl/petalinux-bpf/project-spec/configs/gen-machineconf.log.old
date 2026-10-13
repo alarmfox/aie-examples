@@ -1,13 +1,13 @@
-2026-10-13 08:27:05,948 - [INFO] Getting Platform info from HW file
-2026-10-13 08:27:05,948 - [DEBUG] Using the soc_family specified by user:versal
-2026-10-13 08:27:05,949 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-machine-name.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
-2026-10-13 08:27:08,076 - [DEBUG] 
+2026-10-13 09:51:37,772 - [INFO] Getting Platform info from HW file
+2026-10-13 09:51:37,772 - [DEBUG] Using the soc_family specified by user:versal
+2026-10-13 09:51:37,773 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-machine-name.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
+2026-10-13 09:51:40,001 - [DEBUG] 
 xlnx-versal-vek280-revb xcve2802 Xilinx Versal vek280 Eval board revB
 
 
 
-2026-10-13 08:27:08,077 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-xilinx-id-cpus.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
-2026-10-13 08:27:10,739 - [DEBUG] 
+2026-10-13 09:51:40,002 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-xilinx-id-cpus.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
+2026-10-13 09:51:42,838 - [DEBUG] 
 # global core_number no-domain cpu_name
 arm,cortex-a72 0 None psv_cortexa72_0 None
 arm,cortex-a72 1 None psv_cortexa72_1 None
@@ -18,29 +18,29 @@ arm,cortex-r5 1 None psv_cortexr5_1 None
 
 
 
-2026-10-13 08:27:10,741 - [INFO] Generating Kconfig for the project
-2026-10-13 08:27:10,742 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs  /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts -- petalinuxconfig_xlnx psv_cortexa72_0 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/data/sdt_ipinfo.yaml
-2026-10-13 08:27:12,386 - [DEBUG] 
+2026-10-13 09:51:42,840 - [INFO] Generating Kconfig for the project
+2026-10-13 09:51:42,841 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs  /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts -- petalinuxconfig_xlnx psv_cortexa72_0 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/data/sdt_ipinfo.yaml
+2026-10-13 09:51:44,585 - [DEBUG] 
 
 
 
-2026-10-13 08:27:12,386 - [DEBUG] Generating System HW file
-2026-10-13 08:27:12,424 - [DEBUG] Hardware Configuration:
-2026-10-13 08:27:12,424 - [DEBUG] MODEL       = "Xilinx Versal vek280 Eval board revB"
-2026-10-13 08:27:12,424 - [DEBUG] MACHINE     = "xlnx-versal-vek280-revb"
-2026-10-13 08:27:12,424 - [DEBUG] DEVICE_ID   = "xcve2802"
-2026-10-13 08:27:12,424 - [DEBUG] SOC_FAMILY  = "versal"
-2026-10-13 08:27:12,424 - [DEBUG] SOC_VARIANT = "ai-edge"
-2026-10-13 08:27:12,424 - [DEBUG] CPUs:
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_cortexa72_0 arm cortex-a72 0
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_cortexa72_1 arm cortex-a72 1
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_pmc_0 versal-plm 0
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_psm_0 versal-psm 1
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_cortexr5_0 arm cortex-r5 0
-2026-10-13 08:27:12,424 - [DEBUG] 	= psv_cortexr5_1 arm cortex-r5 1
-2026-10-13 08:27:12,425 - [INFO] Silentconfig project
-2026-10-13 08:27:12,425 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/configs/Kconfig
-2026-10-13 08:27:12,430 - [DEBUG] *
+2026-10-13 09:51:44,585 - [DEBUG] Generating System HW file
+2026-10-13 09:51:44,624 - [DEBUG] Hardware Configuration:
+2026-10-13 09:51:44,624 - [DEBUG] MODEL       = "Xilinx Versal vek280 Eval board revB"
+2026-10-13 09:51:44,624 - [DEBUG] MACHINE     = "xlnx-versal-vek280-revb"
+2026-10-13 09:51:44,624 - [DEBUG] DEVICE_ID   = "xcve2802"
+2026-10-13 09:51:44,624 - [DEBUG] SOC_FAMILY  = "versal"
+2026-10-13 09:51:44,624 - [DEBUG] SOC_VARIANT = "ai-edge"
+2026-10-13 09:51:44,624 - [DEBUG] CPUs:
+2026-10-13 09:51:44,624 - [DEBUG] 	= psv_cortexa72_0 arm cortex-a72 0
+2026-10-13 09:51:44,625 - [DEBUG] 	= psv_cortexa72_1 arm cortex-a72 1
+2026-10-13 09:51:44,625 - [DEBUG] 	= psv_pmc_0 versal-plm 0
+2026-10-13 09:51:44,625 - [DEBUG] 	= psv_psm_0 versal-psm 1
+2026-10-13 09:51:44,625 - [DEBUG] 	= psv_cortexr5_0 arm cortex-r5 0
+2026-10-13 09:51:44,625 - [DEBUG] 	= psv_cortexr5_1 arm cortex-r5 1
+2026-10-13 09:51:44,625 - [INFO] Silentconfig project
+2026-10-13 09:51:44,625 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/configs/Kconfig
+2026-10-13 09:51:44,629 - [DEBUG] *
 * PetaLinux System Configuration
 *
 VERSAL Configuration (SYSTEM_VERSAL) [Y/?] y
@@ -323,15 +323,15 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config
 #
-2026-10-13 08:27:12,467 - [INFO] Generating kconfig for rootfs
-2026-10-13 08:27:12,467 - [DEBUG] python3 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --generate_kconfig /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user/conf/user-rootfsconfig /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs
-2026-10-13 08:27:12,496 - [DEBUG] 
+2026-10-13 09:51:44,663 - [INFO] Generating kconfig for rootfs
+2026-10-13 09:51:44,663 - [DEBUG] python3 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --generate_kconfig /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user/conf/user-rootfsconfig /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs
+2026-10-13 09:51:44,695 - [DEBUG] 
 
 
 
-2026-10-13 08:27:12,496 - [INFO] Silentconfig rootfs
-2026-10-13 08:27:12,496 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs/Kconfig
-2026-10-13 08:27:12,503 - [DEBUG] *
+2026-10-13 09:51:44,695 - [INFO] Silentconfig rootfs
+2026-10-13 09:51:44,695 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs/Kconfig
+2026-10-13 09:51:44,704 - [DEBUG] *
 * Configuration
 *
 *
@@ -3806,7 +3806,7 @@ libvdu-ctrlsw (libvdu-ctrlsw) [Y/n/?]
 libvdu-omxil (libvdu-omxil) [Y/n/?] 
 aie-notebooks (aie-notebooks) [N/y/?] 
 aie-oob (aie-oob) [N/y/?] 
-bpftool (bpftool) [N/y/?] (NEW) 
+bpftool (bpftool) [N/y/?] 
 gpio-demo (gpio-demo) [N/y/?] 
 gstreamer-vdu-examples (gstreamer-vdu-examples) [N/y/?] 
 gstreamer-vdu-notebooks (gstreamer-vdu-notebooks) [N/y/?] 
@@ -3829,19 +3829,19 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config
 #
-2026-10-13 08:27:12,507 - [INFO] Generating configuration files
-2026-10-13 08:27:12,507 - [INFO] Generating cortex-a72 Linux configuration [ None ]
-2026-10-13 08:27:12,507 - [DEBUG] No domain for cpu psv_cortexa72_0 in any domain files
-2026-10-13 08:27:12,507 - [DEBUG] No pl-overlay is enabled for cortex-a72 Linux dts file: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts
-2026-10-13 08:27:12,508 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper --enhanced -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-a72-imux.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/cortexa72-linux.dts -- gen_domain_dts psv_cortexa72_0 linux_dt
-2026-10-13 08:27:16,458 - [DEBUG] 
+2026-10-13 09:51:44,712 - [INFO] Generating configuration files
+2026-10-13 09:51:44,712 - [INFO] Generating cortex-a72 Linux configuration [ None ]
+2026-10-13 09:51:44,712 - [DEBUG] No domain for cpu psv_cortexa72_0 in any domain files
+2026-10-13 09:51:44,712 - [DEBUG] No pl-overlay is enabled for cortex-a72 Linux dts file: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts
+2026-10-13 09:51:44,713 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper --enhanced -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-a72-imux.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/cortexa72-linux.dts -- gen_domain_dts psv_cortexa72_0 linux_dt
+2026-10-13 09:51:48,885 - [DEBUG] 
 
 
 
-2026-10-13 08:27:16,458 - [INFO] Generating microblaze baremetal configuration for versal PMC (PLM)
-2026-10-13 08:27:16,458 - [INFO] Generating microblaze processor tunes
-2026-10-13 08:27:16,459 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-microblaze-yocto.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
-2026-10-13 08:27:21,926 - [DEBUG] 
+2026-10-13 09:51:48,885 - [INFO] Generating microblaze baremetal configuration for versal PMC (PLM)
+2026-10-13 09:51:48,885 - [INFO] Generating microblaze processor tunes
+2026-10-13 09:51:48,886 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-microblaze-yocto.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
+2026-10-13 09:51:54,712 - [DEBUG] 
 # /cpus_microblaze@0/cpu@0
 #   compatible = "pmc-microblaze";
 AVAILTUNES += "microblaze-pmc"
@@ -3857,45 +3857,45 @@ PACKAGE_EXTRA_ARCHS:tune-microblaze-psm = "${TUNE_PKGARCH}"
 
 
 
-2026-10-13 08:27:21,926 - [DEBUG] No domain for cpu psv_pmc_0 in any domain files
-2026-10-13 08:27:21,927 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/xlnx-versal-vek280-revb-microblaze-pmc.dts -- gen_domain_dts psv_pmc_0
-2026-10-13 08:27:23,966 - [DEBUG] 
+2026-10-13 09:51:54,713 - [DEBUG] No domain for cpu psv_pmc_0 in any domain files
+2026-10-13 09:51:54,713 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/xlnx-versal-vek280-revb-microblaze-pmc.dts -- gen_domain_dts psv_pmc_0
+2026-10-13 09:51:56,864 - [DEBUG] 
 
 
 
-2026-10-13 08:27:23,967 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f                  "/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts" -- baremetaldrvlist_xlnx psv_pmc_0 "/home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/share/embeddedsw"
-2026-10-13 08:27:25,796 - [DEBUG] 
+2026-10-13 09:51:56,865 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f                  "/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts" -- baremetaldrvlist_xlnx psv_pmc_0 "/home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/share/embeddedsw"
+2026-10-13 09:51:58,824 - [DEBUG] 
 
 
 
-2026-10-13 08:27:25,797 - [INFO] Generating microblaze baremetal configuration for Versal PSM
-2026-10-13 08:27:25,797 - [DEBUG] No domain for cpu psv_psm_0 in any domain files
-2026-10-13 08:27:25,797 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/xlnx-versal-vek280-revb-microblaze-psm.dts -- gen_domain_dts psv_psm_0
-2026-10-13 08:27:27,905 - [DEBUG] 
+2026-10-13 09:51:58,824 - [INFO] Generating microblaze baremetal configuration for Versal PSM
+2026-10-13 09:51:58,824 - [DEBUG] No domain for cpu psv_psm_0 in any domain files
+2026-10-13 09:51:58,825 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/plnx_workspace/device-tree/xlnx-versal-vek280-revb-microblaze-psm.dts -- gen_domain_dts psv_psm_0
+2026-10-13 09:52:01,069 - [DEBUG] 
 
 
 
-2026-10-13 08:27:27,905 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f                  "/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts" -- baremetaldrvlist_xlnx psv_psm_0 "/home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/share/embeddedsw"
-2026-10-13 08:27:29,734 - [DEBUG] 
+2026-10-13 09:52:01,070 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f                  "/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts" -- baremetaldrvlist_xlnx psv_psm_0 "/home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/share/embeddedsw"
+2026-10-13 09:52:03,018 - [DEBUG] 
 
 
 
-2026-10-13 08:27:29,734 - [INFO] Adding user layers
-2026-10-13 08:27:29,734 - [DEBUG] Shutting down bitbake
-2026-10-13 08:27:29,734 - [DEBUG] Adding layer: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user
-2026-10-13 08:27:29,734 - [DEBUG] bitbake-layers -F add-layer /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user
-2026-10-13 08:27:31,067 - [DEBUG] 
+2026-10-13 09:52:03,019 - [INFO] Adding user layers
+2026-10-13 09:52:03,019 - [DEBUG] Shutting down bitbake
+2026-10-13 09:52:03,019 - [DEBUG] Adding layer: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user
+2026-10-13 09:52:03,019 - [DEBUG] bitbake-layers -F add-layer /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/meta-user
+2026-10-13 09:52:04,078 - [DEBUG] 
 NOTE: Starting bitbake server...
 WARNING: The zynqmp-generic machine is intended to be included by other machines, it should not be used by itself.  For a non-machine, SoC specific filesystem, please use one of the common machines defined in meta-xilinx-core.
-NOTE: Started PRServer with DBfile: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/build/cache/prserv.sqlite3, Address: 127.0.0.1:41739, PID: 502
+NOTE: Started PRServer with DBfile: /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/build/cache/prserv.sqlite3, Address: 127.0.0.1:45675, PID: 574507
 
 
 
-2026-10-13 08:27:31,080 - [INFO] Generating machine conf file
-2026-10-13 08:27:31,084 - [INFO] Generating plnxtool conf file
-2026-10-13 08:27:31,101 - [DEBUG] python3 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --update_cfg /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/build/conf/plnxtool.conf versal
-2026-10-13 08:27:31,130 - [DEBUG] 
+2026-10-13 09:52:04,092 - [INFO] Generating machine conf file
+2026-10-13 09:52:04,097 - [INFO] Generating plnxtool conf file
+2026-10-13 09:52:04,115 - [DEBUG] python3 /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --update_cfg /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/build/conf/plnxtool.conf versal
+2026-10-13 09:52:04,146 - [DEBUG] 
 
 
 
-2026-10-13 08:27:31,136 - [DEBUG] Shutting down bitbake
+2026-10-13 09:52:04,147 - [DEBUG] Shutting down bitbake
