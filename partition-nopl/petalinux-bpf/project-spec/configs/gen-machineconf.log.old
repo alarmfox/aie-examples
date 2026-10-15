@@ -1,13 +1,13 @@
-2026-10-13 14:23:45,441 - [INFO] Getting Platform info from HW file
-2026-10-13 14:23:45,441 - [DEBUG] Using the soc_family specified by user:versal
-2026-10-13 14:23:45,441 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-machine-name.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
-2026-10-13 14:23:47,592 - [DEBUG] 
+2026-10-15 15:51:34,461 - [INFO] Getting Platform info from HW file
+2026-10-15 15:51:34,461 - [DEBUG] Using the soc_family specified by user:versal
+2026-10-15 15:51:34,462 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-machine-name.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
+2026-10-15 15:51:36,599 - [DEBUG] 
 xlnx-versal-vek280-revb xcve2802 Xilinx Versal vek280 Eval board revB
 
 
 
-2026-10-13 14:23:47,592 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-xilinx-id-cpus.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
-2026-10-13 14:23:50,336 - [DEBUG] 
+2026-10-15 15:51:36,600 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs -f --enhanced   -i /home/alarmfox/tools/xilinx/2025.2/petalinux-sdk/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-xilinx-id-cpus.dts /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/hw-description/system-top.dts 
+2026-10-15 15:51:39,317 - [DEBUG] 
 # global core_number no-domain cpu_name
 arm,cortex-a72 0 None psv_cortexa72_0 None
 arm,cortex-a72 1 None psv_cortexa72_1 None
@@ -18,22 +18,22 @@ arm,cortex-r5 1 None psv_cortexr5_1 None
 
 
 
-2026-10-13 14:23:50,345 - [DEBUG] Hardware Configuration:
-2026-10-13 14:23:50,345 - [DEBUG] MODEL       = "Xilinx Versal vek280 Eval board revB"
-2026-10-13 14:23:50,345 - [DEBUG] MACHINE     = "xlnx-versal-vek280-revb"
-2026-10-13 14:23:50,345 - [DEBUG] DEVICE_ID   = "xcve2802"
-2026-10-13 14:23:50,345 - [DEBUG] SOC_FAMILY  = "versal"
-2026-10-13 14:23:50,345 - [DEBUG] SOC_VARIANT = "ai-edge"
-2026-10-13 14:23:50,345 - [DEBUG] CPUs:
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_cortexa72_0 arm cortex-a72 0
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_cortexa72_1 arm cortex-a72 1
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_pmc_0 versal-plm 0
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_psm_0 versal-psm 1
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_cortexr5_0 arm cortex-r5 0
-2026-10-13 14:23:50,345 - [DEBUG] 	= psv_cortexr5_1 arm cortex-r5 1
-2026-10-13 14:23:50,345 - [INFO] Silentconfig project
-2026-10-13 14:23:50,345 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/configs/Kconfig
-2026-10-13 14:23:50,350 - [DEBUG] *
+2026-10-15 15:51:39,321 - [DEBUG] Hardware Configuration:
+2026-10-15 15:51:39,321 - [DEBUG] MODEL       = "Xilinx Versal vek280 Eval board revB"
+2026-10-15 15:51:39,321 - [DEBUG] MACHINE     = "xlnx-versal-vek280-revb"
+2026-10-15 15:51:39,322 - [DEBUG] DEVICE_ID   = "xcve2802"
+2026-10-15 15:51:39,322 - [DEBUG] SOC_FAMILY  = "versal"
+2026-10-15 15:51:39,322 - [DEBUG] SOC_VARIANT = "ai-edge"
+2026-10-15 15:51:39,322 - [DEBUG] CPUs:
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_cortexa72_0 arm cortex-a72 0
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_cortexa72_1 arm cortex-a72 1
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_pmc_0 versal-plm 0
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_psm_0 versal-psm 1
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_cortexr5_0 arm cortex-r5 0
+2026-10-15 15:51:39,322 - [DEBUG] 	= psv_cortexr5_1 arm cortex-r5 1
+2026-10-15 15:51:39,322 - [INFO] Silentconfig project
+2026-10-15 15:51:39,322 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/configs/Kconfig
+2026-10-15 15:51:39,327 - [DEBUG] *
 * PetaLinux System Configuration
 *
 VERSAL Configuration (SYSTEM_VERSAL) [Y/?] y
@@ -319,9 +319,9 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/config
 #
-2026-10-13 14:23:50,388 - [INFO] Silentconfig rootfs
-2026-10-13 14:23:50,388 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs/Kconfig
-2026-10-13 14:23:50,395 - [DEBUG] *
+2026-10-15 15:51:39,361 - [INFO] Silentconfig rootfs
+2026-10-15 15:51:39,361 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config conf /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfsconfigs/Kconfig
+2026-10-15 15:51:39,368 - [DEBUG] *
 * Configuration
 *
 *
@@ -3819,6 +3819,5 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/alarmfox/src/aie-examples/partition-nopl/petalinux-bpf/project-spec/configs/rootfs_config
 #
-2026-10-13 14:23:50,399 - [INFO] Generating configuration files
-2026-10-13 14:23:50,399 - [DEBUG] Skip adding layers as no bitbake-layers or builddir found
-2026-10-13 14:23:50,416 - [DEBUG] Shutting down bitbake
+2026-10-15 15:51:39,372 - [INFO] Generating configuration files
+2026-10-15 15:51:39,389 - [DEBUG] Shutting down bitbake
