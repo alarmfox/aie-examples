@@ -3995,7 +3995,7 @@ CONFIG_libvdu-ctrlsw=y
 CONFIG_libvdu-omxil=y
 # CONFIG_aie-notebooks is not set
 # CONFIG_aie-oob is not set
-# CONFIG_bpftool is not set
+CONFIG_bpftool=y
 # CONFIG_gpio-demo is not set
 # CONFIG_gstreamer-vdu-examples is not set
 # CONFIG_gstreamer-vdu-notebooks is not set
